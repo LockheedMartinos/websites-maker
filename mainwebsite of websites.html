@@ -57,29 +57,53 @@
         }
 
         /* ============================================
-           CUSTOM CURSOR
+           CUSTOM CURSOR - PROFESIONÁLNÍ VERZE
         ============================================ */
         .cursor {
-            width: 20px;
-            height: 20px;
-            border: 2px solid var(--purple-400);
+            width: 8px;
+            height: 8px;
+            background: var(--purple-400);
             border-radius: 50%;
             position: fixed;
             pointer-events: none;
             z-index: 9999;
-            transition: transform 0.15s ease, border-color 0.3s ease;
+            transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        background 0.2s ease,
+                        opacity 0.2s ease;
             mix-blend-mode: difference;
         }
 
-        .cursor-dot {
-            width: 6px;
-            height: 6px;
-            background: var(--accent);
+        .cursor-ring {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(167, 139, 250, 0.5);
             border-radius: 50%;
             position: fixed;
             pointer-events: none;
-            z-index: 9999;
-            transition: transform 0.1s ease;
+            z-index: 9998;
+            transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        border-color 0.3s ease,
+                        width 0.3s ease,
+                        height 0.3s ease,
+                        opacity 0.3s ease;
+            transform: translate(-50%, -50%);
+        }
+
+        .cursor.hover {
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+        }
+
+        .cursor-ring.hover {
+            width: 60px;
+            height: 60px;
+            border-color: var(--accent);
+            border-width: 2px;
+            background: rgba(249, 115, 22, 0.1);
+        }
+
+        .cursor-ring.clicking {
+            transform: translate(-50%, -50%) scale(0.8);
         }
 
         /* ============================================
@@ -840,130 +864,157 @@
         }
 
         /* ============================================
-           PRICING SECTION
+           PRICING SECTION - ZJEDNODUŠENÁ VERZE
         ============================================ */
         .pricing {
             padding: 8rem 0;
         }
 
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            align-items: stretch;
+        .pricing-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
         }
 
-        .pricing-card {
+        .pricing-intro p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .pricing-simple {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .pricing-block {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid var(--dark-border);
-            border-radius: 28px;
-            padding: 2.5rem;
-            position: relative;
+            border-radius: 24px;
+            padding: 3rem;
             transition: all 0.4s ease;
-            display: flex;
-            flex-direction: column;
+            position: relative;
+            overflow: hidden;
         }
 
-        .pricing-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(139, 92, 246, 0.2);
-        }
-
-        .pricing-card.featured {
-            background: linear-gradient(145deg, rgba(139, 92, 246, 0.1), rgba(139, 92, 246, 0.02));
-            border-color: rgba(139, 92, 246, 0.3);
-            transform: scale(1.02);
-        }
-
-        .pricing-card.featured:hover {
-            transform: scale(1.02) translateY(-5px);
-        }
-
-        .pricing-badge {
+        .pricing-block::before {
+            content: '';
             position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--gradient-accent);
-            color: white;
-            padding: 0.4rem 1.25rem;
-            border-radius: 100px;
-            font-size: 0.8rem;
-            font-weight: 700;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-main);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
-        .pricing-header {
-            text-align: center;
+        .pricing-block:hover {
+            border-color: rgba(139, 92, 246, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .pricing-block:hover::before {
+            opacity: 1;
+        }
+
+        .pricing-block-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 2rem;
             padding-bottom: 2rem;
             border-bottom: 1px solid var(--dark-border);
-            margin-bottom: 2rem;
         }
 
-        .pricing-name {
+        .pricing-block-title h3 {
             font-family: 'Bricolage Grotesque', sans-serif;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
         }
 
-        .pricing-desc {
+        .pricing-block-title p {
             color: var(--text-muted);
             font-size: 0.9rem;
-            margin-bottom: 1.5rem;
         }
 
-        .pricing-price {
-            display: flex;
-            align-items: baseline;
-            justify-content: center;
-            gap: 0.25rem;
+        .pricing-block-price {
+            text-align: right;
         }
 
-        .pricing-currency {
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-            font-weight: 600;
+        .pricing-from {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.25rem;
         }
 
         .pricing-amount {
             font-family: 'Bricolage Grotesque', sans-serif;
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             font-weight: 800;
             background: var(--gradient-main);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            line-height: 1;
         }
 
-        .pricing-period {
-            color: var(--text-muted);
-            font-size: 0.9rem;
+        .pricing-currency {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
         }
 
-        .pricing-features {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
+        .pricing-block-features {
+            display: grid;
+            gap: 0.75rem;
             margin-bottom: 2rem;
         }
 
-        .pricing-feature {
+        .pricing-block-feature {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             gap: 0.75rem;
             font-size: 0.95rem;
             color: var(--text-secondary);
         }
 
-        .pricing-feature i {
-            color: var(--accent);
-            margin-top: 0.2rem;
+        .pricing-block-feature i {
+            color: var(--purple-400);
+            font-size: 0.85rem;
+            width: 18px;
         }
 
-        .pricing-card .btn {
+        .pricing-block .btn {
             width: 100%;
             justify-content: center;
+        }
+
+        /* Pricing Note */
+        .pricing-note {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(139, 92, 246, 0.05);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            border-radius: 16px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pricing-note p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .pricing-note strong {
+            color: var(--purple-300);
         }
 
         /* ============================================
@@ -1221,14 +1272,9 @@
                 grid-template-columns: 1fr;
             }
 
-            .pricing-grid {
+            .pricing-simple {
                 grid-template-columns: 1fr;
-                max-width: 400px;
-                margin: 0 auto;
-            }
-
-            .pricing-card.featured {
-                transform: none;
+                max-width: 500px;
             }
 
             .process-timeline {
@@ -1290,7 +1336,7 @@
                 transform: rotate(-45deg) translate(7px, -6px);
             }
 
-            .cursor, .cursor-dot {
+            .cursor, .cursor-ring {
                 display: none;
             }
 
@@ -1352,7 +1398,7 @@
 <body>
     <!-- Custom Cursor -->
     <div class="cursor"></div>
-    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
 
     <!-- Background -->
     <div class="bg-pattern">
@@ -1599,136 +1645,94 @@
             </div>
         </section>
 
-        <!-- Pricing Section -->
+        <!-- Pricing Section - ZJEDNODUŠENÁ -->
         <section id="cenik" class="pricing">
             <div class="container">
                 <div class="section-header">
                     <div class="section-label">Ceník</div>
-                    <h2 class="section-title">Férové ceny</h2>
-                    <p class="section-subtitle">Kvalitní web nemusí stát majlant</p>
+                    <h2 class="section-title">Jednoduchý ceník</h2>
+                    <p class="section-subtitle">Vyberte si podle rozsahu vašeho projektu</p>
                 </div>
-                <div class="pricing-grid">
-                    <div class="pricing-card fade-in">
-                        <div class="pricing-header">
-                            <h3 class="pricing-name">Základní</h3>
-                            <p class="pricing-desc">Pro malé firmy a živnostníky</p>
-                            <div class="pricing-price">
-                                <span class="pricing-currency">od</span>
-                                <span class="pricing-amount">3 990</span>
-                                <span class="pricing-period">Kč</span>
+                
+                <div class="pricing-simple">
+                    <!-- Menší projekt -->
+                    <div class="pricing-block fade-in">
+                        <div class="pricing-block-header">
+                            <div class="pricing-block-title">
+                                <h3>Menší projekt</h3>
+                                <p>Jednostránkový web</p>
+                            </div>
+                            <div class="pricing-block-price">
+                                <div class="pricing-from">od</div>
+                                <div class="pricing-amount">3 990</div>
+                                <div class="pricing-currency">Kč</div>
                             </div>
                         </div>
-                        <div class="pricing-features">
-                            <div class="pricing-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Jednostránkový web</span>
-                            </div>
-                            <div class="pricing-feature">
+                        <div class="pricing-block-features">
+                            <div class="pricing-block-feature">
                                 <i class="fas fa-check"></i>
                                 <span>Responzivní design</span>
                             </div>
-                            <div class="pricing-feature">
+                            <div class="pricing-block-feature">
                                 <i class="fas fa-check"></i>
                                 <span>Kontaktní formulář</span>
                             </div>
-                            <div class="pricing-feature">
+                            <div class="pricing-block-feature">
                                 <i class="fas fa-check"></i>
                                 <span>SEO základy</span>
                             </div>
-                            <div class="pricing-feature">
+                            <div class="pricing-block-feature">
                                 <i class="fas fa-check"></i>
                                 <span>Dodání do 7 dní</span>
                             </div>
                         </div>
                         <a href="https://t.me/bynyz" target="_blank" class="btn btn-secondary">
-                            <i class="fab fa-telegram"></i> Chci toto
+                            <i class="fab fa-telegram"></i> Nezávazná konzultace
                         </a>
                     </div>
-                    <div class="pricing-card featured fade-in stagger-1">
-                        <div class="pricing-badge">Nejoblíbenější</div>
-                        <div class="pricing-header">
-                            <h3 class="pricing-name">Profesionální</h3>
-                            <p class="pricing-desc">Pro rostoucí firmy</p>
-                            <div class="pricing-price">
-                                <span class="pricing-currency">od</span>
-                                <span class="pricing-amount">7 990</span>
-                                <span class="pricing-period">Kč</span>
+
+                    <!-- Větší projekt -->
+                    <div class="pricing-block fade-in stagger-1">
+                        <div class="pricing-block-header">
+                            <div class="pricing-block-title">
+                                <h3>Větší projekt</h3>
+                                <p>Vícestránkový web</p>
+                            </div>
+                            <div class="pricing-block-price">
+                                <div class="pricing-from">od</div>
+                                <div class="pricing-amount">7 990</div>
+                                <div class="pricing-currency">Kč</div>
                             </div>
                         </div>
-                        <div class="pricing-features">
-                            <div class="pricing-feature">
+                        <div class="pricing-block-features">
+                            <div class="pricing-block-feature">
                                 <i class="fas fa-check"></i>
-                                <span>Až 5 stránek</span>
+                                <span>Více stránek dle potřeby</span>
                             </div>
-                            <div class="pricing-feature">
+                            <div class="pricing-block-feature">
                                 <i class="fas fa-check"></i>
-                                <span>Prémiový design</span>
+                                <span>Prémiový design + animace</span>
                             </div>
-                            <div class="pricing-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Galerie a animace</span>
-                            </div>
-                            <div class="pricing-feature">
+                            <div class="pricing-block-feature">
                                 <i class="fas fa-check"></i>
                                 <span>Pokročilé SEO</span>
                             </div>
-                            <div class="pricing-feature">
+                            <div class="pricing-block-feature">
                                 <i class="fas fa-check"></i>
-                                <span>Google mapa</span>
-                            </div>
-                            <div class="pricing-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Sociální sítě</span>
+                                <span>Google mapa, galerie, sociální sítě</span>
                             </div>
                         </div>
                         <a href="https://t.me/bynyz" target="_blank" class="btn btn-primary">
-                            <i class="fab fa-telegram"></i> Chci toto
-                        </a>
-                    </div>
-                    <div class="pricing-card fade-in stagger-2">
-                        <div class="pricing-header">
-                            <h3 class="pricing-name">Premium</h3>
-                            <p class="pricing-desc">Kompletní řešení</p>
-                            <div class="pricing-price">
-                                <span class="pricing-currency">od</span>
-                                <span class="pricing-amount">14 990</span>
-                                <span class="pricing-period">Kč</span>
-                            </div>
-                        </div>
-                        <div class="pricing-features">
-                            <div class="pricing-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Neomezený počet stránek</span>
-                            </div>
-                            <div class="pricing-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Unikátní animace</span>
-                            </div>
-                            <div class="pricing-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Rezervační systém</span>
-                            </div>
-                            <div class="pricing-feature">
-                                <i class="fas fa-check"></i>
-                                <span>E-shop integrace</span>
-                            </div>
-                            <div class="pricing-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Prioritní podpora</span>
-                            </div>
-                            <div class="pricing-feature">
-                                <i class="fas fa-check"></i>
-                                <span>3 měsíce údržby zdarma</span>
-                            </div>
-                        </div>
-                        <a href="https://t.me/bynyz" target="_blank" class="btn btn-secondary">
-                            <i class="fab fa-telegram"></i> Chci toto
+                            <i class="fab fa-telegram"></i> Nezávazná konzultace
                         </a>
                     </div>
                 </div>
-                <p style="text-align: center; margin-top: 3rem; color: var(--text-secondary);">
-                    💡 Máte jiné požadavky? Napište mi a domluvíme se na ceně přesně podle vašich potřeb.
-                </p>
+
+                <div class="pricing-note fade-in">
+                    <p>
+                        <strong>💡 Jiné požadavky?</strong> Napište mi a domluvíme se na ceně přesně podle vašich potřeb. Rezervační systémy, e-shop integrace a další funkce řešíme individuálně.
+                    </p>
+                </div>
             </div>
         </section>
 
@@ -1822,28 +1826,58 @@
 
     <script>
         // ==========================================
-        // CUSTOM CURSOR
+        // CUSTOM CURSOR - PROFESIONÁLNÍ VERZE
         // ==========================================
         const cursor = document.querySelector('.cursor');
-        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorRing = document.querySelector('.cursor-ring');
 
         if (window.innerWidth > 768) {
+            let mouseX = 0, mouseY = 0;
+            let cursorX = 0, cursorY = 0;
+            let ringX = 0, ringY = 0;
+
             document.addEventListener('mousemove', (e) => {
-                cursor.style.left = e.clientX + 'px';
-                cursor.style.top = e.clientY + 'px';
-                cursorDot.style.left = e.clientX + 'px';
-                cursorDot.style.top = e.clientY + 'px';
+                mouseX = e.clientX;
+                mouseY = e.clientY;
             });
 
+            // Smooth cursor animation
+            function animateCursor() {
+                // Cursor dot - faster follow
+                cursorX += (mouseX - cursorX) * 0.2;
+                cursorY += (mouseY - cursorY) * 0.2;
+                cursor.style.left = cursorX + 'px';
+                cursor.style.top = cursorY + 'px';
+                cursor.style.transform = 'translate(-50%, -50%)';
+
+                // Ring - slower follow for smooth effect
+                ringX += (mouseX - ringX) * 0.1;
+                ringY += (mouseY - ringY) * 0.1;
+                cursorRing.style.left = ringX + 'px';
+                cursorRing.style.top = ringY + 'px';
+
+                requestAnimationFrame(animateCursor);
+            }
+            animateCursor();
+
+            // Hover effects
             document.querySelectorAll('a, button').forEach(el => {
                 el.addEventListener('mouseenter', () => {
-                    cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
-                    cursor.style.borderColor = 'var(--accent)';
+                    cursor.classList.add('hover');
+                    cursorRing.classList.add('hover');
                 });
                 el.addEventListener('mouseleave', () => {
-                    cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-                    cursor.style.borderColor = 'var(--purple-400)';
+                    cursor.classList.remove('hover');
+                    cursorRing.classList.remove('hover');
                 });
+            });
+
+            // Click effect
+            document.addEventListener('mousedown', () => {
+                cursorRing.classList.add('clicking');
+            });
+            document.addEventListener('mouseup', () => {
+                cursorRing.classList.remove('clicking');
             });
         }
 
@@ -1910,9 +1944,6 @@
             observer.observe(el);
         });
 
-        // ==========================================
-        // TYPING EFFECT FOR TAGLINE (Optional enhancement)
-        // ==========================================
         console.log('🚀 BYNYZ web design loaded!');
     </script>
 </body>
