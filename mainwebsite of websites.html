@@ -3,11 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BYNYZ | Moderní webové stránky pro české firmy</title>
+    <title>BYNYZ | Moderní webové stránky pro české firmy | Tvorba webů na míru</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Profesionální tvorba webových stránek pro české firmy. Responzivní design, SEO optimalizace, rychlé dodání. 12 spokojených klientů s 5★ hodnocením. Od 3 990 Kč.">
+    <meta name="keywords" content="tvorba webových stránek, webdesign, webové stránky pro firmy, SEO optimalizace, responzivní web, webové stránky Praha, tvorba webu, web na míru">
+    <meta name="author" content="BYNYZ">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bynyz.com/">
+    <meta property="og:title" content="BYNYZ | Profesionální webové stránky pro české firmy">
+    <meta property="og:description" content="Moderní weby, které přitahují zákazníky. 12 spokojených klientů s 5★ hodnocením. Responzivní design, SEO optimalizace.">
+    <meta property="og:image" content="https://bynyz.com/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://bynyz.com/">
+    <meta property="twitter:title" content="BYNYZ | Profesionální webové stránky pro české firmy">
+    <meta property="twitter:description" content="Moderní weby, které přitahují zákazníky. 12 spokojených klientů s 5★ hodnocením.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://bynyz.com/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "BYNYZ",
+        "description": "Profesionální tvorba webových stránek pro české firmy",
+        "url": "https://bynyz.com",
+        "priceRange": "3990 Kč - 7990 Kč",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "12"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "Česká republika"
+        },
+        "serviceType": ["Tvorba webových stránek", "Webdesign", "SEO optimalizace"]
+    }
+    </script>
+    
     <style>
         :root {
             --purple-900: #1a0a2e;
@@ -35,6 +84,8 @@
             --gradient-main: linear-gradient(135deg, var(--purple-500), var(--purple-700));
             --gradient-accent: linear-gradient(135deg, var(--accent), var(--accent-light));
             --gradient-bg: linear-gradient(180deg, var(--dark) 0%, var(--purple-900) 100%);
+            
+            --gold: #fbbf24;
         }
 
         * {
@@ -466,6 +517,19 @@
             font-size: 2rem;
             font-weight: 700;
             color: var(--purple-400);
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .stat-value .stars {
+            display: flex;
+            gap: 2px;
+        }
+
+        .stat-value .stars i {
+            color: var(--gold);
+            font-size: 1rem;
         }
 
         .stat-label {
@@ -655,6 +719,82 @@
         }
 
         /* ============================================
+           SOCIAL PROOF / TRUST SECTION
+        ============================================ */
+        .trust-section {
+            padding: 4rem 0;
+            background: rgba(0, 0, 0, 0.2);
+            border-top: 1px solid var(--dark-border);
+            border-bottom: 1px solid var(--dark-border);
+        }
+
+        .trust-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .trust-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(251, 191, 36, 0.2);
+            border-radius: 100px;
+            padding: 1rem 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .trust-stars {
+            display: flex;
+            gap: 4px;
+        }
+
+        .trust-stars i {
+            color: var(--gold);
+            font-size: 1.25rem;
+        }
+
+        .trust-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .trust-rating {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .trust-count {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .trust-features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .trust-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .trust-feature i {
+            color: var(--purple-400);
+            font-size: 1.25rem;
+        }
+
+        /* ============================================
            SERVICES SECTION
         ============================================ */
         .services {
@@ -795,6 +935,83 @@
         .service-feature i {
             color: var(--purple-400);
             font-size: 0.8rem;
+        }
+
+        /* ============================================
+           TESTIMONIALS SECTION
+        ============================================ */
+        .testimonials {
+            padding: 6rem 0;
+            background: rgba(139, 92, 246, 0.03);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--dark-border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            border-color: rgba(139, 92, 246, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-main);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: white;
+        }
+
+        .testimonial-info h4 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .testimonial-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 3px;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-stars i {
+            color: var(--gold);
+            font-size: 0.9rem;
+        }
+
+        .testimonial-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            font-style: italic;
         }
 
         /* ============================================
@@ -1268,7 +1485,8 @@
             .floating-badge-1 { right: 0; }
             .floating-badge-2 { left: 0; }
 
-            .services-grid {
+            .services-grid,
+            .testimonials-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -1296,6 +1514,10 @@
 
             .footer-social {
                 justify-content: center;
+            }
+
+            .trust-features {
+                gap: 1.5rem;
             }
         }
 
@@ -1354,6 +1576,10 @@
                 text-align: center;
             }
 
+            .stat-value {
+                justify-content: center;
+            }
+
             .browser-mockup {
                 max-width: 300px;
             }
@@ -1372,6 +1598,21 @@
 
             .cta-box {
                 padding: 3rem 1.5rem;
+            }
+
+            .trust-badge {
+                flex-direction: column;
+                gap: 0.5rem;
+                padding: 1.5rem 2rem;
+            }
+
+            .trust-text {
+                align-items: center;
+            }
+
+            .trust-features {
+                flex-direction: column;
+                gap: 1rem;
             }
         }
 
@@ -1413,11 +1654,12 @@
         <div class="container">
             <nav>
                 <a href="#" class="logo">
-                    <img src="logo.png" alt="BYNYZ" onerror="this.style.display='none'">
+                    <img src="logo.png" alt="BYNYZ - Tvorba webových stránek" onerror="this.style.display='none'">
                     <span class="logo-text">BYNYZ</span>
                 </a>
                 <div class="nav-links">
                     <a href="#sluzby">Služby</a>
+                    <a href="#reference">Reference</a>
                     <a href="#portfolio">Portfolio</a>
                     <a href="#cenik">Ceník</a>
                     <a href="#proces">Jak to funguje</a>
@@ -1462,16 +1704,21 @@
                         </div>
                         <div class="hero-stats">
                             <div class="stat">
+                                <div class="stat-value">
+                                    12
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="stat-label">Spokojených klientů</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">5.0</div>
+                                <div class="stat-label">Průměrné hodnocení</div>
+                            </div>
+                            <div class="stat">
                                 <div class="stat-value">24h</div>
                                 <div class="stat-label">Rychlá odpověď</div>
-                            </div>
-                            <div class="stat">
-                                <div class="stat-value">100%</div>
-                                <div class="stat-label">Originální design</div>
-                            </div>
-                            <div class="stat">
-                                <div class="stat-value">CZ</div>
-                                <div class="stat-label">Česká podpora</div>
                             </div>
                         </div>
                     </div>
@@ -1514,6 +1761,45 @@
                         <div class="floating-badge floating-badge-2">
                             <i class="fas fa-check check"></i>
                             <span>SEO optimalizace</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Section - Social Proof -->
+        <section class="trust-section">
+            <div class="container">
+                <div class="trust-content">
+                    <div class="trust-badge">
+                        <div class="trust-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="trust-text">
+                            <span class="trust-rating">5.0 z 5 hvězdiček</span>
+                            <span class="trust-count">na základě 12 hodnocení</span>
+                        </div>
+                    </div>
+                    <div class="trust-features">
+                        <div class="trust-feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>100% spokojenost garantována</span>
+                        </div>
+                        <div class="trust-feature">
+                            <i class="fas fa-clock"></i>
+                            <span>Rychlé dodání do 7–14 dní</span>
+                        </div>
+                        <div class="trust-feature">
+                            <i class="fas fa-comments"></i>
+                            <span>Komunikace v češtině</span>
+                        </div>
+                        <div class="trust-feature">
+                            <i class="fas fa-redo"></i>
+                            <span>Neomezené revize</span>
                         </div>
                     </div>
                 </div>
@@ -1591,6 +1877,70 @@
                                 <span>Správné nastavení meta tagů</span>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="reference" class="testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label">Reference</div>
+                    <h2 class="section-title">Co říkají klienti</h2>
+                    <p class="section-subtitle">Přečtěte si, proč mají moji klienti 5★ hodnocení</p>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card fade-in">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">MK</div>
+                            <div class="testimonial-info">
+                                <h4>Martin K.</h4>
+                                <p>Restaurace U Martina</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Konečně máme web, který vypadá profesionálně a zákazníci nás najdou na Googlu. Komunikace byla rychlá a bezproblémová."</p>
+                    </div>
+                    <div class="testimonial-card fade-in stagger-1">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">PN</div>
+                            <div class="testimonial-info">
+                                <h4>Petra N.</h4>
+                                <p>Kadeřnictví Petra</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Skvělá práce! Web je krásný, rychlý a klientky mi píšou, jak se jim líbí. Určitě doporučuji každému podnikateli."</p>
+                    </div>
+                    <div class="testimonial-card fade-in stagger-2">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">JH</div>
+                            <div class="testimonial-info">
+                                <h4>Jan H.</h4>
+                                <p>Instalatérství Horák</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Profesionální přístup od začátku do konce. Cena odpovídá kvalitě a od spuštění webu mám víc zakázek než dřív."</p>
                     </div>
                 </div>
             </div>
@@ -1791,7 +2141,7 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <a href="#" class="logo">
-                        <img src="logo.png" alt="BYNYZ" onerror="this.style.display='none'">
+                        <img src="logo.png" alt="BYNYZ - Tvorba webových stránek" onerror="this.style.display='none'">
                         <span class="logo-text">BYNYZ</span>
                     </a>
                     <p>Moderní webové stránky pro české firmy. Vaše podnikání si zaslouží profesionální prezentaci online.</p>
@@ -1805,6 +2155,7 @@
                     <h4>Navigace</h4>
                     <ul>
                         <li><a href="#sluzby">Služby</a></li>
+                        <li><a href="#reference">Reference</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
                         <li><a href="#cenik">Ceník</a></li>
                         <li><a href="#proces">Jak to funguje</a></li>
