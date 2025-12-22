@@ -1207,8 +1207,29 @@
             width: 18px;
         }
 
+        .pricing-buttons {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .pricing-buttons .btn {
+            flex: 1;
+            justify-content: center;
+            padding: 0.875rem 1rem;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--dark-border);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--purple-500);
+        }
+
         .pricing-block .btn {
-            width: 100%;
             justify-content: center;
         }
 
@@ -2170,9 +2191,14 @@
                                 <span>Dodání do 7 dní</span>
                             </div>
                         </div>
-                        <a href="https://t.me/bynyzdesign" target="_blank" class="btn btn-secondary">
-                            <i class="fab fa-telegram"></i> Nezávazná konzultace
-                        </a>
+                        <div class="pricing-buttons">
+                            <a href="https://t.me/bynyzdesign" target="_blank" class="btn btn-secondary">
+                                <i class="fab fa-telegram"></i> Telegram
+                            </a>
+                            <a href="#" class="btn btn-outline email-btn">
+                                <i class="fas fa-envelope"></i> Email
+                            </a>
+                        </div>
                     </div>
 
                     <!-- Větší projekt -->
@@ -2206,9 +2232,14 @@
                                 <span>Google mapa, galerie, sociální sítě</span>
                             </div>
                         </div>
-                        <a href="https://t.me/bynyzdesign" target="_blank" class="btn btn-primary">
-                            <i class="fab fa-telegram"></i> Nezávazná konzultace
-                        </a>
+                        <div class="pricing-buttons">
+                            <a href="https://t.me/bynyzdesign" target="_blank" class="btn btn-primary">
+                                <i class="fab fa-telegram"></i> Telegram
+                            </a>
+                            <a href="#" class="btn btn-outline email-btn">
+                                <i class="fas fa-envelope"></i> Email
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -2318,17 +2349,6 @@
                     <div class="email-option-text">
                         <strong>Outlook</strong>
                         <span>Otevřít v Microsoft Outlook</span>
-                    </div>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-                
-                <a href="mailto:support@bynyz.com?subject=Poptávka webu" class="email-option">
-                    <div class="email-option-icon default">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="email-option-text">
-                        <strong>Výchozí aplikace</strong>
-                        <span>Otevřít v emailovém klientu</span>
                     </div>
                     <i class="fas fa-arrow-right"></i>
                 </a>
