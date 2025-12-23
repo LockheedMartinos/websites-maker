@@ -4,1864 +4,340 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BYNYZ | Moderní webové stránky pro české firmy | Tvorba webů na míru</title>
-    
-    <!-- SEO Meta Tags -->
     <meta name="description" content="Profesionální tvorba webových stránek pro české firmy. Responzivní design, SEO optimalizace, rychlé dodání. 12 spokojených klientů s 5★ hodnocením. Od 3 990 Kč.">
     <meta name="keywords" content="tvorba webových stránek, webdesign, webové stránky pro firmy, SEO optimalizace, responzivní web, webové stránky Praha, tvorba webu, web na míru">
     <meta name="author" content="BYNYZ">
     <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bynyz.com/">
     <meta property="og:title" content="BYNYZ | Profesionální webové stránky pro české firmy">
     <meta property="og:description" content="Moderní weby, které přitahují zákazníky. 12 spokojených klientů s 5★ hodnocením. Responzivní design, SEO optimalizace.">
     <meta property="og:image" content="https://bynyz.com/og-image.jpg">
-    
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://bynyz.com/">
     <meta property="twitter:title" content="BYNYZ | Profesionální webové stránky pro české firmy">
     <meta property="twitter:description" content="Moderní weby, které přitahují zákazníky. 12 spokojených klientů s 5★ hodnocením.">
-    
-    <!-- Canonical URL -->
     <link rel="canonical" href="https://bynyz.com/">
-    
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
-    <!-- Structured Data / Schema.org -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "BYNYZ",
-        "description": "Profesionální tvorba webových stránek pro české firmy",
-        "url": "https://bynyz.com",
-        "priceRange": "3990 Kč - 7990 Kč",
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5",
-            "reviewCount": "12"
-        },
-        "areaServed": {
-            "@type": "Country",
-            "name": "Česká republika"
-        },
-        "serviceType": ["Tvorba webových stránek", "Webdesign", "SEO optimalizace"]
-    }
+    {"@context":"https://schema.org","@type":"ProfessionalService","name":"BYNYZ","description":"Profesionální tvorba webových stránek pro české firmy","url":"https://bynyz.com","priceRange":"3990 Kč - 7990 Kč","aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"12"},"areaServed":{"@type":"Country","name":"Česká republika"},"serviceType":["Tvorba webových stránek","Webdesign","SEO optimalizace"]}
     </script>
-    
     <style>
         :root {
-            --purple-900: #1a0a2e;
-            --purple-800: #2d1b4e;
-            --purple-700: #4c2889;
-            --purple-600: #6b3fa0;
-            --purple-500: #8b5cf6;
-            --purple-400: #a78bfa;
-            --purple-300: #c4b5fd;
-            --purple-200: #ddd6fe;
-            --purple-100: #ede9fe;
-            
-            --accent: #f97316;
-            --accent-light: #fb923c;
-            --accent-glow: rgba(249, 115, 22, 0.4);
-            
-            --dark: #0a0a0f;
-            --dark-card: #12121a;
-            --dark-border: rgba(139, 92, 246, 0.15);
-            
-            --text-primary: #fafafa;
-            --text-secondary: #a1a1aa;
-            --text-muted: #71717a;
-            
+            --purple-900: #1a0a2e; --purple-800: #2d1b4e; --purple-700: #4c2889;
+            --purple-600: #6b3fa0; --purple-500: #8b5cf6; --purple-400: #a78bfa;
+            --purple-300: #c4b5fd; --accent: #f97316; --accent-light: #fb923c;
+            --accent-glow: rgba(249, 115, 22, 0.4); --dark: #0a0a0f;
+            --dark-card: #12121a; --dark-border: rgba(139, 92, 246, 0.15);
+            --text-primary: #fafafa; --text-secondary: #a1a1aa; --text-muted: #71717a;
             --gradient-main: linear-gradient(135deg, var(--purple-500), var(--purple-700));
             --gradient-accent: linear-gradient(135deg, var(--accent), var(--accent-light));
-            --gradient-bg: linear-gradient(180deg, var(--dark) 0%, var(--purple-900) 100%);
-            
             --gold: #fbbf24;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+        body { font-family: 'Instrument Sans', sans-serif; background: var(--dark); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; }
+        
+        .cursor, .cursor-ring { display: none; }
+        @media (min-width: 769px) {
+            .cursor { width: 8px; height: 8px; background: var(--purple-400); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; mix-blend-mode: difference; display: block; }
+            .cursor-ring { width: 40px; height: 40px; border: 1px solid rgba(167,139,250,0.5); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9998; transform: translate(-50%,-50%); display: block; transition: all 0.15s ease; }
+            .cursor.hover { transform: translate(-50%,-50%) scale(0); opacity: 0; }
+            .cursor-ring.hover { width: 60px; height: 60px; border-color: var(--accent); border-width: 2px; background: rgba(249,115,22,0.1); }
         }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 100px;
-        }
-
-        body {
-            font-family: 'Instrument Sans', -apple-system, sans-serif;
-            background: var(--dark);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* ============================================
-           CUSTOM CURSOR - PROFESIONÁLNÍ VERZE
-        ============================================ */
-        .cursor {
-            width: 8px;
-            height: 8px;
-            background: var(--purple-400);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                        background 0.2s ease,
-                        opacity 0.2s ease;
-            mix-blend-mode: difference;
-        }
-
-        .cursor-ring {
-            width: 40px;
-            height: 40px;
-            border: 1px solid rgba(167, 139, 250, 0.5);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9998;
-            transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                        border-color 0.3s ease,
-                        width 0.3s ease,
-                        height 0.3s ease,
-                        opacity 0.3s ease;
-            transform: translate(-50%, -50%);
-        }
-
-        .cursor.hover {
-            transform: translate(-50%, -50%) scale(0);
-            opacity: 0;
-        }
-
-        .cursor-ring.hover {
-            width: 60px;
-            height: 60px;
-            border-color: var(--accent);
-            border-width: 2px;
-            background: rgba(249, 115, 22, 0.1);
-        }
-
-        .cursor-ring.clicking {
-            transform: translate(-50%, -50%) scale(0.8);
-        }
-
-        /* ============================================
-           ANIMATED BACKGROUND
-        ============================================ */
-        .bg-pattern {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-            overflow: hidden;
-        }
-
-        .bg-grid {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(rgba(139, 92, 246, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(139, 92, 246, 0.03) 1px, transparent 1px);
-            background-size: 60px 60px;
-            mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
-        }
-
-        .bg-orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(120px);
-            opacity: 0.4;
-            animation: float 20s ease-in-out infinite;
-        }
-
-        .bg-orb-1 {
-            width: 600px;
-            height: 600px;
-            background: var(--purple-700);
-            top: -200px;
-            right: -200px;
-        }
-
-        .bg-orb-2 {
-            width: 500px;
-            height: 500px;
-            background: var(--purple-800);
-            bottom: 20%;
-            left: -150px;
-            animation-delay: -7s;
-        }
-
-        .bg-orb-3 {
-            width: 300px;
-            height: 300px;
-            background: var(--accent);
-            opacity: 0.15;
-            top: 50%;
-            right: 20%;
-            animation-delay: -14s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(30px, -20px) scale(1.05); }
-            66% { transform: translate(-20px, 30px) scale(0.95); }
-        }
-
-        /* ============================================
-           LAYOUT
-        ============================================ */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        section {
-            position: relative;
-            z-index: 1;
-        }
-
-        /* ============================================
-           HEADER & NAV
-        ============================================ */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            padding: 1rem 0;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        header.scrolled {
-            background: rgba(10, 10, 15, 0.85);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--dark-border);
-            padding: 0.75rem 0;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
-            font-family: 'Bricolage Grotesque', sans-serif;
-            font-size: 1.75rem;
-            font-weight: 800;
-            color: var(--text-primary);
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.02);
-        }
-
-        .logo img {
-            height: 48px;
-            width: auto;
-            filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.5));
-        }
-
-        .logo-text {
-            background: linear-gradient(135deg, var(--purple-300), var(--purple-500));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 2.5rem;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -6px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-accent);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--text-primary);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .nav-cta {
-            background: var(--gradient-main);
-            color: var(--text-primary) !important;
-            padding: 0.75rem 1.5rem;
-            border-radius: 100px;
-            font-weight: 600 !important;
-            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-        }
-
-        .nav-cta::after {
-            display: none !important;
-        }
-
-        .nav-cta:hover {
-            transform: translateY(-2px) !important;
-            box-shadow: 0 8px 30px rgba(139, 92, 246, 0.5) !important;
-        }
-
-        .mobile-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 5px;
-        }
-
-        .mobile-toggle span {
-            width: 28px;
-            height: 2px;
-            background: var(--text-primary);
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        }
-
-        /* ============================================
-           HERO SECTION
-        ============================================ */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 8rem 0 4rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            font-family: 'Bricolage Grotesque', sans-serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.02em;
-        }
-
-        .hero-text h1 .line {
-            display: block;
-            overflow: hidden;
-        }
-
-        .hero-text h1 .line span {
-            display: block;
-            animation: slideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-            transform: translateY(100%);
-        }
-
+        
+        .bg-pattern { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+        .bg-grid { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(139,92,246,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(139,92,246,0.03) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%); }
+        .bg-orb { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.4; animation: float 20s ease-in-out infinite; }
+        .bg-orb-1 { width: 600px; height: 600px; background: var(--purple-700); top: -200px; right: -200px; }
+        .bg-orb-2 { width: 500px; height: 500px; background: var(--purple-800); bottom: 20%; left: -150px; animation-delay: -7s; }
+        .bg-orb-3 { width: 300px; height: 300px; background: var(--accent); opacity: 0.15; top: 50%; right: 20%; animation-delay: -14s; }
+        @keyframes float { 0%, 100% { transform: translate(0,0) scale(1); } 33% { transform: translate(30px,-20px) scale(1.05); } 66% { transform: translate(-20px,30px) scale(0.95); } }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        section { position: relative; z-index: 1; }
+        
+        header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1rem 0; transition: all 0.4s ease; }
+        header.scrolled { background: rgba(10,10,15,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--dark-border); padding: 0.75rem 0; }
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.75rem; font-weight: 800; color: var(--text-primary); }
+        .logo-text { background: linear-gradient(135deg, var(--purple-300), var(--purple-500)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-weight: 500; font-size: 0.95rem; position: relative; transition: color 0.3s; }
+        .nav-links a::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 0; height: 2px; background: var(--gradient-accent); transition: width 0.3s; }
+        .nav-links a:hover { color: var(--text-primary); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-cta { background: var(--gradient-main); color: var(--text-primary) !important; padding: 0.75rem 1.5rem; border-radius: 100px; font-weight: 600 !important; box-shadow: 0 4px 20px rgba(139,92,246,0.3); }
+        .nav-cta::after { display: none !important; }
+        .mobile-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 5px; }
+        .mobile-toggle span { width: 28px; height: 2px; background: var(--text-primary); border-radius: 2px; transition: all 0.3s; }
+        
+        .hero { min-height: 100vh; display: flex; align-items: center; padding: 8rem 0 4rem; }
+        .hero-content { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: center; }
+        .hero-text h1 { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; }
+        .hero-text h1 .line { display: block; overflow: hidden; }
+        .hero-text h1 .line span { display: block; animation: slideUp 0.8s cubic-bezier(0.4,0,0.2,1) forwards; transform: translateY(100%); }
         .hero-text h1 .line:nth-child(1) span { animation-delay: 0.1s; }
         .hero-text h1 .line:nth-child(2) span { animation-delay: 0.2s; }
         .hero-text h1 .line:nth-child(3) span { animation-delay: 0.3s; }
-
-        @keyframes slideUp {
-            to { transform: translateY(0); }
-        }
-
-        .hero-text h1 .highlight {
-            background: var(--gradient-accent);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            position: relative;
-        }
-
-        .hero-tagline {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(139, 92, 246, 0.1);
-            border: 1px solid rgba(139, 92, 246, 0.2);
-            padding: 0.5rem 1rem;
-            border-radius: 100px;
-            font-size: 0.875rem;
-            color: var(--purple-300);
-            margin-bottom: 1.5rem;
-            animation: fadeIn 0.6s ease 0.5s forwards;
-            opacity: 0;
-        }
-
-        .hero-tagline i {
-            color: var(--accent);
-        }
-
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-
-        .hero-description {
-            font-size: 1.15rem;
-            color: var(--text-secondary);
-            margin-bottom: 2.5rem;
-            max-width: 520px;
-            line-height: 1.8;
-            animation: fadeIn 0.6s ease 0.6s forwards;
-            opacity: 0;
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            animation: fadeIn 0.6s ease 0.7s forwards;
-            opacity: 0;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            padding: 1rem 2rem;
-            border-radius: 100px;
-            font-weight: 600;
-            font-size: 1rem;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            font-family: inherit;
-        }
-
-        .btn-primary {
-            background: var(--gradient-accent);
-            color: white;
-            box-shadow: 0 4px 25px var(--accent-glow);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 35px var(--accent-glow);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-primary);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(139, 92, 246, 0.3);
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 2.5rem;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--dark-border);
-            animation: fadeIn 0.6s ease 0.9s forwards;
-            opacity: 0;
-        }
-
-        .stat {
-            text-align: left;
-        }
-
-        .stat-value {
-            font-family: 'Bricolage Grotesque', sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--purple-400);
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-        }
-
-        .stat-value .stars {
-            display: flex;
-            gap: 2px;
-        }
-
-        .stat-value .stars i {
-            color: var(--gold);
-            font-size: 1rem;
-        }
-
-        .stat-label {
-            font-size: 0.875rem;
-            color: var(--text-muted);
-        }
-
-        /* Hero Visual */
-        .hero-visual {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .browser-mockup {
-            width: 100%;
-            max-width: 500px;
-            background: var(--dark-card);
-            border-radius: 16px;
-            border: 1px solid var(--dark-border);
-            overflow: hidden;
-            box-shadow: 
-                0 50px 100px -20px rgba(0, 0, 0, 0.5),
-                0 0 0 1px rgba(139, 92, 246, 0.1),
-                inset 0 1px 0 rgba(255, 255, 255, 0.05);
-            animation: browserFloat 6s ease-in-out infinite;
-            transform-style: preserve-3d;
-            perspective: 1000px;
-        }
-
-        @keyframes browserFloat {
-            0%, 100% { transform: translateY(0) rotateX(2deg) rotateY(-2deg); }
-            50% { transform: translateY(-15px) rotateX(-2deg) rotateY(2deg); }
-        }
-
-        .browser-header {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 1.25rem;
-            background: rgba(0, 0, 0, 0.3);
-            border-bottom: 1px solid var(--dark-border);
-        }
-
-        .browser-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-
+        @keyframes slideUp { to { transform: translateY(0); } }
+        .hero-text h1 .highlight { background: var(--gradient-accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero-tagline { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.2); padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.875rem; color: var(--purple-300); margin-bottom: 1.5rem; animation: fadeIn 0.6s ease 0.5s forwards; opacity: 0; }
+        .hero-tagline i { color: var(--accent); }
+        @keyframes fadeIn { to { opacity: 1; } }
+        .hero-description { font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 2.5rem; max-width: 520px; line-height: 1.8; animation: fadeIn 0.6s ease 0.6s forwards; opacity: 0; }
+        .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeIn 0.6s ease 0.7s forwards; opacity: 0; }
+        .btn { display: inline-flex; align-items: center; gap: 0.6rem; padding: 1rem 2rem; border-radius: 100px; font-weight: 600; font-size: 1rem; text-decoration: none; border: none; cursor: pointer; transition: all 0.3s; font-family: inherit; }
+        .btn-primary { background: var(--gradient-accent); color: white; box-shadow: 0 4px 25px var(--accent-glow); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 35px var(--accent-glow); }
+        .btn-secondary { background: rgba(255,255,255,0.05); color: var(--text-primary); border: 1px solid rgba(255,255,255,0.1); }
+        .btn-secondary:hover { background: rgba(255,255,255,0.1); border-color: rgba(139,92,246,0.3); }
+        .btn-outline { background: transparent; color: var(--text-primary); border: 1px solid var(--dark-border); }
+        .btn-outline:hover { background: rgba(255,255,255,0.05); border-color: var(--purple-500); }
+        .hero-stats { display: flex; gap: 2.5rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--dark-border); animation: fadeIn 0.6s ease 0.9s forwards; opacity: 0; }
+        .stat-value { font-family: 'Bricolage Grotesque', sans-serif; font-size: 2rem; font-weight: 700; color: var(--purple-400); display: flex; align-items: center; gap: 0.25rem; }
+        .stat-value .stars { display: flex; gap: 2px; }
+        .stat-value .stars i { color: var(--gold); font-size: 1rem; }
+        .stat-label { font-size: 0.875rem; color: var(--text-muted); }
+        
+        .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; }
+        .browser-mockup { width: 100%; max-width: 520px; background: var(--dark-card); border-radius: 16px; border: 1px solid var(--dark-border); overflow: hidden; box-shadow: 0 50px 100px -20px rgba(0,0,0,0.5); animation: browserFloat 6s ease-in-out infinite; }
+        @keyframes browserFloat { 0%, 100% { transform: translateY(0) rotateX(2deg) rotateY(-2deg); } 50% { transform: translateY(-15px) rotateX(-2deg) rotateY(2deg); } }
+        .browser-header { display: flex; align-items: center; gap: 0.5rem; padding: 0.875rem 1.25rem; background: rgba(0,0,0,0.4); border-bottom: 1px solid var(--dark-border); }
+        .browser-dots { display: flex; gap: 6px; }
+        .browser-dot { width: 12px; height: 12px; border-radius: 50%; }
         .browser-dot:nth-child(1) { background: #ff5f57; }
         .browser-dot:nth-child(2) { background: #ffbd2e; }
         .browser-dot:nth-child(3) { background: #28c840; }
-
-        .browser-url {
-            flex: 1;
-            margin-left: 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            font-family: 'Instrument Sans', monospace;
-        }
-
-        .browser-content {
-            padding: 1.5rem;
-            min-height: 280px;
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(249, 115, 22, 0.03));
-            position: relative;
-        }
-
-        .browser-skeleton {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .skeleton-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--dark-border);
-        }
-
-        .skeleton-logo {
-            width: 80px;
-            height: 24px;
-            background: var(--gradient-main);
-            border-radius: 4px;
-        }
-
-        .skeleton-menu {
-            display: flex;
-            gap: 0.75rem;
-        }
-
-        .skeleton-menu-item {
-            width: 50px;
-            height: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 3px;
-        }
-
-        .skeleton-hero {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            padding: 1.5rem 0;
-        }
-
-        .skeleton-title {
-            width: 70%;
-            height: 18px;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 4px;
-        }
-
-        .skeleton-subtitle {
-            width: 90%;
-            height: 10px;
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 3px;
-        }
-
-        .skeleton-btn {
-            width: 100px;
-            height: 28px;
-            background: var(--gradient-accent);
-            border-radius: 100px;
-            margin-top: 0.5rem;
-        }
-
-        .skeleton-cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.75rem;
-            margin-top: 0.5rem;
-        }
-
-        .skeleton-card {
-            height: 60px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--dark-border);
-            border-radius: 8px;
-        }
-
-        .floating-badge {
-            position: absolute;
-            background: var(--dark-card);
-            border: 1px solid var(--dark-border);
-            border-radius: 12px;
-            padding: 0.75rem 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 0.85rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            animation: badgeFloat 4s ease-in-out infinite;
-        }
-
-        .floating-badge-1 {
-            top: 10%;
-            right: -20px;
-            animation-delay: 0s;
-        }
-
-        .floating-badge-2 {
-            bottom: 20%;
-            left: -30px;
-            animation-delay: -2s;
-        }
-
-        @keyframes badgeFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .floating-badge i {
-            color: var(--accent);
-        }
-
-        .floating-badge .check {
-            color: #28c840;
-        }
-
-        /* ============================================
-           SOCIAL PROOF / TRUST SECTION
-        ============================================ */
-        .trust-section {
-            padding: 4rem 0;
-            background: rgba(0, 0, 0, 0.2);
-            border-top: 1px solid var(--dark-border);
-            border-bottom: 1px solid var(--dark-border);
-        }
-
-        .trust-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .trust-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(251, 191, 36, 0.2);
-            border-radius: 100px;
-            padding: 1rem 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .trust-stars {
-            display: flex;
-            gap: 4px;
-        }
-
-        .trust-stars i {
-            color: var(--gold);
-            font-size: 1.25rem;
-        }
-
-        .trust-text {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .trust-rating {
-            font-family: 'Bricolage Grotesque', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .trust-count {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .trust-features {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        .trust-feature {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        .trust-feature i {
-            color: var(--purple-400);
-            font-size: 1.25rem;
-        }
-
-        /* ============================================
-           SERVICES SECTION
-        ============================================ */
-        .services {
-            padding: 8rem 0;
-            position: relative;
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto 4rem;
-        }
-
-        .section-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 1rem;
-        }
-
-        .section-label::before,
-        .section-label::after {
-            content: '';
-            width: 30px;
-            height: 1px;
-            background: var(--accent);
-            opacity: 0.5;
-        }
-
-        .section-title {
-            font-family: 'Bricolage Grotesque', sans-serif;
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-        }
-
-        .section-subtitle {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--dark-border);
-            border-radius: 24px;
-            padding: 2.5rem;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--gradient-main);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(139, 92, 246, 0.3);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
-        }
-
-        .service-card:hover::before {
-            opacity: 1;
-        }
-
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--gradient-main);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.75rem;
-            color: white;
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-
-        .service-icon::after {
-            content: '';
-            position: absolute;
-            inset: -3px;
-            border-radius: 22px;
-            background: var(--gradient-main);
-            opacity: 0.3;
-            filter: blur(10px);
-            z-index: -1;
-        }
-
-        .service-card h3 {
-            font-family: 'Bricolage Grotesque', sans-serif;
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .service-card p {
-            color: var(--text-secondary);
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-features {
-            display: flex;
-            flex-direction: column;
-            gap: 0.6rem;
-        }
-
-        .service-feature {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        .service-feature i {
-            color: var(--purple-400);
-            font-size: 0.8rem;
-        }
-
-        /* ============================================
-           TESTIMONIALS SECTION
-        ============================================ */
-        .testimonials {
-            padding: 6rem 0;
-            background: rgba(139, 92, 246, 0.03);
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--dark-border);
-            border-radius: 20px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-        }
-
-        .testimonial-card:hover {
-            border-color: rgba(139, 92, 246, 0.3);
-            transform: translateY(-5px);
-        }
-
-        .testimonial-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-avatar {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-main);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Bricolage Grotesque', sans-serif;
-            font-weight: 700;
-            font-size: 1.25rem;
-            color: white;
-        }
-
-        .testimonial-info h4 {
-            font-family: 'Bricolage Grotesque', sans-serif;
-            font-weight: 600;
-            font-size: 1rem;
-        }
-
-        .testimonial-info p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        .testimonial-stars {
-            display: flex;
-            gap: 3px;
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-stars i {
-            color: var(--gold);
-            font-size: 0.9rem;
-        }
-
-        .testimonial-text {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            font-style: italic;
-        }
-
-        /* ============================================
-           PORTFOLIO SECTION
-        ============================================ */
-        .portfolio {
-            padding: 8rem 0;
-            background: rgba(0, 0, 0, 0.3);
-        }
-
-        .portfolio-showcase {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-        }
-
-        .portfolio-card {
-            position: relative;
-            border-radius: 24px;
-            overflow: hidden;
-            background: var(--dark-card);
-            border: 1px solid var(--dark-border);
-            aspect-ratio: 16/10;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.4s ease;
-        }
-
-        .portfolio-card:hover {
-            transform: scale(1.02);
-            border-color: rgba(139, 92, 246, 0.3);
-        }
-
-        .portfolio-placeholder {
-            text-align: center;
-            padding: 3rem;
-        }
-
-        .portfolio-placeholder i {
-            font-size: 4rem;
-            color: var(--purple-700);
-            margin-bottom: 1.5rem;
-        }
-
-        .portfolio-placeholder h4 {
-            font-family: 'Bricolage Grotesque', sans-serif;
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .portfolio-placeholder p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        .portfolio-coming {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--gradient-accent);
-            color: white;
-            padding: 0.4rem 1rem;
-            border-radius: 100px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-
-        /* ============================================
-           PRICING SECTION - ZJEDNODUŠENÁ VERZE
-        ============================================ */
-        .pricing {
-            padding: 8rem 0;
-        }
-
-        .pricing-intro {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 4rem;
-        }
-
-        .pricing-intro p {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .pricing-simple {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .pricing-block {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--dark-border);
-            border-radius: 24px;
-            padding: 3rem;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .pricing-block::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-main);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .pricing-block:hover {
-            border-color: rgba(139, 92, 246, 0.3);
-            transform: translateY(-5px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-        }
-
-        .pricing-block:hover::before {
-            opacity: 1;
-        }
-
-        .pricing-block-header {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid var(--dark-border);
-        }
-
-        .pricing-block-title h3 {
-            font-family: 'Bricolage Grotesque', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .pricing-block-title p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        .pricing-block-price {
-            text-align: right;
-        }
-
-        .pricing-from {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 0.25rem;
-        }
-
-        .pricing-amount {
-            font-family: 'Bricolage Grotesque', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: var(--gradient-main);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1;
-        }
-
-        .pricing-currency {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-
-        .pricing-block-features {
-            display: grid;
-            gap: 0.75rem;
-            margin-bottom: 2rem;
-        }
-
-        .pricing-block-feature {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-        }
-
-        .pricing-block-feature i {
-            color: var(--purple-400);
-            font-size: 0.85rem;
-            width: 18px;
-        }
-
-        .pricing-buttons {
-            display: flex;
-            gap: 0.75rem;
-        }
-
-        .pricing-buttons .btn {
-            flex: 1;
-            justify-content: center;
-            padding: 0.875rem 1rem;
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--text-primary);
-            border: 1px solid var(--dark-border);
-        }
-
-        .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: var(--purple-500);
-        }
-
-        .pricing-block .btn {
-            justify-content: center;
-        }
-
-        /* Pricing Note */
-        .pricing-note {
-            text-align: center;
-            margin-top: 3rem;
-            padding: 2rem;
-            background: rgba(139, 92, 246, 0.05);
-            border: 1px solid rgba(139, 92, 246, 0.15);
-            border-radius: 16px;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .pricing-note p {
-            color: var(--text-secondary);
-            font-size: 1rem;
-        }
-
-        .pricing-note strong {
-            color: var(--purple-300);
-        }
-
-        /* ============================================
-           PROCESS SECTION
-        ============================================ */
-        .process {
-            padding: 8rem 0;
-            background: rgba(0, 0, 0, 0.3);
-        }
-
-        .process-timeline {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            position: relative;
-        }
-
-        .process-timeline::before {
-            content: '';
-            position: absolute;
-            top: 45px;
-            left: 10%;
-            right: 10%;
-            height: 2px;
-            background: linear-gradient(90deg, var(--purple-700), var(--accent), var(--purple-700));
-            opacity: 0.3;
-        }
-
-        .process-step {
-            text-align: center;
-            position: relative;
-        }
-
-        .process-number {
-            width: 90px;
-            height: 90px;
-            background: var(--dark-card);
-            border: 2px solid var(--dark-border);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-family: 'Bricolage Grotesque', sans-serif;
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--purple-400);
-            position: relative;
-            z-index: 1;
-            transition: all 0.3s ease;
-        }
-
-        .process-step:hover .process-number {
-            border-color: var(--purple-500);
-            background: rgba(139, 92, 246, 0.1);
-            transform: scale(1.1);
-        }
-
-        .process-step h3 {
-            font-family: 'Bricolage Grotesque', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-        }
-
-        .process-step p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        /* ============================================
-           CTA SECTION
-        ============================================ */
-        .cta {
-            padding: 8rem 0;
-            text-align: center;
-        }
-
-        .cta-box {
-            background: linear-gradient(145deg, rgba(139, 92, 246, 0.15), rgba(139, 92, 246, 0.05));
-            border: 1px solid rgba(139, 92, 246, 0.25);
-            border-radius: 32px;
-            padding: 5rem 3rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 200px;
-            background: var(--purple-500);
-            filter: blur(150px);
-            opacity: 0.3;
-        }
-
-        .cta-box h2 {
-            font-family: 'Bricolage Grotesque', sans-serif;
-            font-size: clamp(2rem, 4vw, 2.75rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            position: relative;
-        }
-
-        .cta-box p {
-            color: var(--text-secondary);
-            font-size: 1.15rem;
-            margin-bottom: 2.5rem;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-            position: relative;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            position: relative;
-        }
-
-        .cta-telegram {
-            background: linear-gradient(135deg, #0088cc, #00a2e8);
-        }
-
-        .cta-telegram:hover {
-            box-shadow: 0 8px 30px rgba(0, 136, 204, 0.4);
-        }
-
-        /* ============================================
-           EMAIL MODAL
-        ============================================ */
-        .email-modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .email-modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .email-modal {
-            background: var(--dark-card);
-            border: 1px solid var(--dark-border);
-            border-radius: 24px;
-            padding: 2.5rem;
-            max-width: 420px;
-            width: 90%;
-            position: relative;
-            transform: scale(0.9) translateY(20px);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .email-modal-overlay.active .email-modal {
-            transform: scale(1) translateY(0);
-        }
-
-        .email-modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: color 0.3s ease;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-        }
-
-        .email-modal-close:hover {
-            color: var(--text-primary);
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .email-modal h3 {
-            font-family: 'Bricolage Grotesque', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            text-align: center;
-        }
-
-        .email-modal-subtitle {
-            color: var(--text-secondary);
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 0.95rem;
-        }
-
-        .email-address-box {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--dark-border);
-            border-radius: 12px;
-            padding: 1rem 1.25rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 1.5rem;
-        }
-
-        .email-address-box span {
-            font-family: 'Instrument Sans', monospace;
-            color: var(--purple-300);
-            font-size: 1rem;
-        }
-
-        .copy-btn {
-            background: var(--gradient-main);
-            border: none;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        .copy-btn:hover {
-            transform: scale(1.05);
-        }
-
-        .copy-btn.copied {
-            background: linear-gradient(135deg, #22c55e, #16a34a);
-        }
-
-        .email-options {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .email-option {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem 1.25rem;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--dark-border);
-            border-radius: 12px;
-            text-decoration: none;
-            color: var(--text-primary);
-            transition: all 0.3s ease;
-        }
-
-        .email-option:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(139, 92, 246, 0.3);
-            transform: translateX(5px);
-        }
-
-        .email-option-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-        }
-
-        .email-option-icon.gmail {
-            background: linear-gradient(135deg, #EA4335, #FBBC05);
-            color: white;
-        }
-
-        .email-option-icon.seznam {
-            background: linear-gradient(135deg, #CC0000, #FF0000);
-            color: white;
-        }
-
-        .email-option-icon.outlook {
-            background: linear-gradient(135deg, #0078D4, #00BCF2);
-            color: white;
-        }
-
-        .email-option-icon.default {
-            background: var(--gradient-main);
-            color: white;
-        }
-
-        .email-option-text {
-            flex: 1;
-        }
-
-        .email-option-text strong {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 0.15rem;
-        }
-
-        .email-option-text span {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        .email-option i.fa-arrow-right {
-            color: var(--text-muted);
-            transition: all 0.3s ease;
-        }
-
-        .email-option:hover i.fa-arrow-right {
-            color: var(--purple-400);
-            transform: translateX(3px);
-        }
-
-        /* ============================================
-           FOOTER
-        ============================================ */
-        footer {
-            border-top: 1px solid var(--dark-border);
-            padding: 4rem 0 2rem;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 1.5fr repeat(2, 1fr);
-            gap: 4rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-brand .logo {
-            margin-bottom: 1rem;
-        }
-
-        .footer-brand p {
-            color: var(--text-secondary);
-            max-width: 300px;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 0.75rem;
-        }
-
-        .footer-social a {
-            width: 44px;
-            height: 44px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--dark-border);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            font-size: 1.25rem;
-            transition: all 0.3s ease;
-        }
-
-        .footer-social a:hover {
-            background: var(--purple-600);
-            border-color: var(--purple-500);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        .footer-col h4 {
-            font-family: 'Bricolage Grotesque', sans-serif;
-            font-weight: 700;
-            margin-bottom: 1.25rem;
-        }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-col a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-col a:hover {
-            color: var(--purple-400);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid var(--dark-border);
-        }
-
-        .footer-bottom p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        /* ============================================
-           RESPONSIVE
-        ============================================ */
-        @media (max-width: 1024px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-description {
-                max-width: 100%;
-            }
-
-            .hero-cta {
-                justify-content: center;
-            }
-
-            .hero-stats {
-                justify-content: center;
-            }
-
-            .hero-visual {
-                order: -1;
-            }
-
-            .browser-mockup {
-                max-width: 400px;
-            }
-
-            .floating-badge-1 { right: 0; }
-            .floating-badge-2 { left: 0; }
-
-            .services-grid,
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .pricing-simple {
-                grid-template-columns: 1fr;
-                max-width: 500px;
-            }
-
-            .process-timeline {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .process-timeline::before {
-                display: none;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .footer-brand p {
-                max-width: 100%;
-            }
-
-            .footer-social {
-                justify-content: center;
-            }
-
-            .trust-features {
-                gap: 1.5rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 80%;
-                max-width: 350px;
-                height: 100vh;
-                background: var(--dark);
-                flex-direction: column;
-                padding: 6rem 2rem 2rem;
-                gap: 2rem;
-                transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                box-shadow: -10px 0 50px rgba(0, 0, 0, 0.5);
-                border-left: 1px solid var(--dark-border);
-            }
-
-            .nav-links.active {
-                right: 0;
-            }
-
-            .mobile-toggle {
-                display: flex;
-            }
-
-            .mobile-toggle.active span:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
-            }
-
-            .mobile-toggle.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .mobile-toggle.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(7px, -6px);
-            }
-
-            .cursor, .cursor-ring {
-                display: none;
-            }
-
-            .hero {
-                padding: 7rem 0 3rem;
-            }
-
-            .hero-stats {
-                flex-direction: column;
-                gap: 1.5rem;
-                align-items: center;
-            }
-
-            .stat {
-                text-align: center;
-            }
-
-            .stat-value {
-                justify-content: center;
-            }
-
-            .browser-mockup {
-                max-width: 300px;
-            }
-
-            .floating-badge {
-                display: none;
-            }
-
-            .portfolio-showcase {
-                grid-template-columns: 1fr;
-            }
-
-            .process-timeline {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-box {
-                padding: 3rem 1.5rem;
-            }
-
-            .trust-badge {
-                flex-direction: column;
-                gap: 0.5rem;
-                padding: 1.5rem 2rem;
-            }
-
-            .trust-text {
-                align-items: center;
-            }
-
-            .trust-features {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
-
-        /* ============================================
-           ANIMATIONS
-        ============================================ */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
+        .browser-url { flex: 1; margin-left: 0.75rem; background: rgba(255,255,255,0.07); padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem; }
+        .browser-url i { color: #28c840; font-size: 0.65rem; }
+        .browser-content { min-height: 320px; background: linear-gradient(180deg, #0f0f14, #151520); }
+        
+        .web-mockup { width: 100%; display: flex; flex-direction: column; }
+        .mockup-navbar { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.25rem; background: rgba(0,0,0,0.3); border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .mockup-logo { display: flex; align-items: center; gap: 0.5rem; }
+        .mockup-logo-icon { width: 28px; height: 28px; background: linear-gradient(135deg, var(--accent), var(--accent-light)); border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+        .mockup-logo-icon i { color: white; font-size: 0.75rem; }
+        .mockup-logo-text { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 0.85rem; color: var(--text-primary); }
+        .mockup-nav-items { display: flex; gap: 1rem; }
+        .mockup-nav-item { width: 40px; height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; }
+        .mockup-nav-item:nth-child(2) { width: 50px; }
+        .mockup-nav-item:nth-child(3) { width: 35px; }
+        .mockup-nav-cta { background: var(--gradient-accent); padding: 0.35rem 0.75rem; border-radius: 100px; font-size: 0.65rem; color: white; font-weight: 600; }
+        .mockup-hero { padding: 1.5rem 1.25rem; display: flex; gap: 1.25rem; }
+        .mockup-hero-text { flex: 1; }
+        .mockup-hero-badge { display: inline-flex; align-items: center; gap: 0.3rem; background: rgba(139,92,246,0.15); border: 1px solid rgba(139,92,246,0.25); padding: 0.25rem 0.6rem; border-radius: 100px; font-size: 0.55rem; color: var(--purple-300); margin-bottom: 0.6rem; }
+        .mockup-hero-badge i { color: var(--gold); font-size: 0.5rem; }
+        .mockup-hero-title { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.1rem; font-weight: 800; line-height: 1.2; margin-bottom: 0.5rem; color: var(--text-primary); }
+        .mockup-hero-title .accent { color: var(--accent); }
+        .mockup-hero-desc { font-size: 0.6rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 0.75rem; }
+        .mockup-hero-buttons { display: flex; gap: 0.5rem; }
+        .mockup-btn-primary { background: var(--gradient-accent); padding: 0.4rem 0.85rem; border-radius: 100px; font-size: 0.6rem; color: white; font-weight: 600; display: flex; align-items: center; gap: 0.3rem; }
+        .mockup-btn-secondary { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 0.4rem 0.85rem; border-radius: 100px; font-size: 0.6rem; color: var(--text-secondary); }
+        .mockup-hero-image { width: 110px; height: 90px; background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(249,115,22,0.15)); border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; position: relative; overflow: hidden; }
+        .mockup-hero-image::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.05) 50%, transparent 70%); animation: shimmer 3s ease-in-out infinite; }
+        @keyframes shimmer { 0% { transform: translateX(-100%) rotate(45deg); } 100% { transform: translateX(100%) rotate(45deg); } }
+        .mockup-hero-image i { color: var(--purple-400); font-size: 1.5rem; }
+        .mockup-hero-image span { font-size: 0.5rem; color: var(--text-muted); }
+        .mockup-stats { display: flex; gap: 0.75rem; padding: 0 1.25rem; margin-bottom: 1rem; }
+        .mockup-stat { display: flex; align-items: center; gap: 0.4rem; padding: 0.4rem 0.65rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; }
+        .mockup-stat-icon { width: 22px; height: 22px; background: var(--gradient-main); border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+        .mockup-stat-icon i { color: white; font-size: 0.55rem; }
+        .mockup-stat-value { font-family: 'Bricolage Grotesque', sans-serif; font-size: 0.7rem; font-weight: 700; color: var(--text-primary); }
+        .mockup-stat-label { font-size: 0.45rem; color: var(--text-muted); }
+        .mockup-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; padding: 0 1.25rem 1rem; }
+        .mockup-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 0.75rem 0.6rem; text-align: center; transition: all 0.3s; }
+        .mockup-card:hover { border-color: rgba(139,92,246,0.3); transform: translateY(-2px); }
+        .mockup-card-icon { width: 32px; height: 32px; margin: 0 auto 0.5rem; background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(139,92,246,0.1)); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+        .mockup-card-icon i { color: var(--purple-400); font-size: 0.75rem; }
+        .mockup-card h4 { font-size: 0.6rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.2rem; }
+        .mockup-card p { font-size: 0.45rem; color: var(--text-muted); }
+        .floating-badge { position: absolute; background: var(--dark-card); border: 1px solid var(--dark-border); border-radius: 12px; padding: 0.75rem 1rem; display: flex; align-items: center; gap: 0.6rem; font-size: 0.85rem; box-shadow: 0 20px 40px rgba(0,0,0,0.3); animation: badgeFloat 4s ease-in-out infinite; }
+        .floating-badge-1 { top: 10%; right: -20px; }
+        .floating-badge-2 { bottom: 20%; left: -30px; animation-delay: -2s; }
+        @keyframes badgeFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        .floating-badge i { color: var(--accent); }
+        .floating-badge .check { color: #28c840; }
+        
+        .trust-section { padding: 4rem 0; background: rgba(0,0,0,0.2); border-top: 1px solid var(--dark-border); border-bottom: 1px solid var(--dark-border); }
+        .trust-content { display: flex; flex-direction: column; align-items: center; text-align: center; }
+        .trust-badge { display: inline-flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(251,191,36,0.2); border-radius: 100px; padding: 1rem 2rem; margin-bottom: 2rem; }
+        .trust-stars { display: flex; gap: 4px; }
+        .trust-stars i { color: var(--gold); font-size: 1.25rem; }
+        .trust-text { display: flex; flex-direction: column; align-items: flex-start; }
+        .trust-rating { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--text-primary); }
+        .trust-count { font-size: 0.9rem; color: var(--text-secondary); }
+        .trust-features { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; }
+        .trust-feature { display: flex; align-items: center; gap: 0.75rem; color: var(--text-secondary); font-size: 0.95rem; }
+        .trust-feature i { color: var(--purple-400); font-size: 1.25rem; }
+        
+        .services { padding: 8rem 0; }
+        .section-header { text-align: center; max-width: 600px; margin: 0 auto 4rem; }
+        .section-label { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; }
+        .section-label::before, .section-label::after { content: ''; width: 30px; height: 1px; background: var(--accent); opacity: 0.5; }
+        .section-title { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 1rem; }
+        .section-subtitle { color: var(--text-secondary); font-size: 1.1rem; }
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .service-card { background: rgba(255,255,255,0.02); border: 1px solid var(--dark-border); border-radius: 24px; padding: 2.5rem; position: relative; overflow: hidden; transition: all 0.4s; }
+        .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gradient-main); opacity: 0; transition: opacity 0.3s; }
+        .service-card:hover { transform: translateY(-8px); border-color: rgba(139,92,246,0.3); box-shadow: 0 30px 60px rgba(0,0,0,0.3); }
+        .service-card:hover::before { opacity: 1; }
+        .service-icon { width: 70px; height: 70px; background: var(--gradient-main); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 1.75rem; color: white; margin-bottom: 1.5rem; }
+        .service-card h3 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem; }
+        .service-card p { color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem; }
+        .service-features { display: flex; flex-direction: column; gap: 0.6rem; }
+        .service-feature { display: flex; align-items: center; gap: 0.6rem; font-size: 0.9rem; color: var(--text-muted); }
+        .service-feature i { color: var(--purple-400); font-size: 0.8rem; }
+        
+        .portfolio { padding: 8rem 0; background: rgba(0,0,0,0.3); }
+        .portfolio-showcase { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+        .portfolio-card { position: relative; border-radius: 24px; overflow: hidden; background: var(--dark-card); border: 1px solid var(--dark-border); aspect-ratio: 16/10; display: flex; align-items: center; justify-content: center; transition: all 0.4s; }
+        .portfolio-card:hover { transform: scale(1.02); border-color: rgba(139,92,246,0.3); }
+        .portfolio-placeholder { text-align: center; padding: 3rem; }
+        .portfolio-placeholder i { font-size: 4rem; color: var(--purple-700); margin-bottom: 1.5rem; }
+        .portfolio-placeholder h4 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.25rem; margin-bottom: 0.5rem; }
+        .portfolio-placeholder p { color: var(--text-muted); font-size: 0.9rem; }
+        .portfolio-coming { position: absolute; top: 1rem; right: 1rem; background: var(--gradient-accent); color: white; padding: 0.4rem 1rem; border-radius: 100px; font-size: 0.75rem; font-weight: 600; }
+        
+        .pricing { padding: 8rem 0; }
+        .pricing-simple { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 900px; margin: 0 auto; }
+        .pricing-block { background: rgba(255,255,255,0.02); border: 1px solid var(--dark-border); border-radius: 24px; padding: 3rem; transition: all 0.4s; position: relative; overflow: hidden; }
+        .pricing-block::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--gradient-main); opacity: 0; transition: opacity 0.3s; }
+        .pricing-block:hover { border-color: rgba(139,92,246,0.3); transform: translateY(-5px); box-shadow: 0 25px 50px rgba(0,0,0,0.3); }
+        .pricing-block:hover::before { opacity: 1; }
+        .pricing-block-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--dark-border); }
+        .pricing-block-title h3 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .pricing-block-title p { color: var(--text-muted); font-size: 0.9rem; }
+        .pricing-block-price { text-align: right; }
+        .pricing-from { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.25rem; }
+        .pricing-amount { font-family: 'Bricolage Grotesque', sans-serif; font-size: 2.5rem; font-weight: 800; background: var(--gradient-main); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; }
+        .pricing-currency { font-size: 1rem; color: var(--text-secondary); }
+        .pricing-block-features { display: grid; gap: 0.75rem; margin-bottom: 2rem; }
+        .pricing-block-feature { display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem; color: var(--text-secondary); }
+        .pricing-block-feature i { color: var(--purple-400); font-size: 0.85rem; width: 18px; }
+        .pricing-buttons { display: flex; gap: 0.75rem; }
+        .pricing-buttons .btn { flex: 1; justify-content: center; padding: 0.875rem 1rem; }
+        .pricing-note { text-align: center; margin-top: 3rem; padding: 2rem; background: rgba(139,92,246,0.05); border: 1px solid rgba(139,92,246,0.15); border-radius: 16px; max-width: 900px; margin-left: auto; margin-right: auto; }
+        .pricing-note p { color: var(--text-secondary); }
+        .pricing-note strong { color: var(--purple-300); }
+        
+        .process { padding: 8rem 0; background: rgba(0,0,0,0.3); }
+        .process-timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; position: relative; }
+        .process-timeline::before { content: ''; position: absolute; top: 45px; left: 10%; right: 10%; height: 2px; background: linear-gradient(90deg, var(--purple-700), var(--accent), var(--purple-700)); opacity: 0.3; }
+        .process-step { text-align: center; }
+        .process-number { width: 90px; height: 90px; background: var(--dark-card); border: 2px solid var(--dark-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-family: 'Bricolage Grotesque', sans-serif; font-size: 2rem; font-weight: 800; color: var(--purple-400); position: relative; z-index: 1; transition: all 0.3s; }
+        .process-step:hover .process-number { border-color: var(--purple-500); background: rgba(139,92,246,0.1); transform: scale(1.1); }
+        .process-step h3 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.75rem; }
+        .process-step p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; }
+        
+        .cta { padding: 8rem 0; text-align: center; }
+        .cta-box { background: linear-gradient(145deg, rgba(139,92,246,0.15), rgba(139,92,246,0.05)); border: 1px solid rgba(139,92,246,0.25); border-radius: 32px; padding: 5rem 3rem; position: relative; overflow: hidden; }
+        .cta-box::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 200px; height: 200px; background: var(--purple-500); filter: blur(150px); opacity: 0.3; }
+        .cta-box h2 { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 700; margin-bottom: 1rem; position: relative; }
+        .cta-box p { color: var(--text-secondary); font-size: 1.15rem; margin-bottom: 2.5rem; max-width: 500px; margin-left: auto; margin-right: auto; position: relative; }
+        .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; }
+        .cta-telegram { background: linear-gradient(135deg, #0088cc, #00a2e8); }
+        .cta-telegram:hover { box-shadow: 0 8px 30px rgba(0,136,204,0.4); }
+
+        .email-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); z-index: 1000; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: all 0.3s; }
+        .email-modal-overlay.active { opacity: 1; visibility: visible; }
+        .email-modal { background: var(--dark-card); border: 1px solid var(--dark-border); border-radius: 24px; padding: 2.5rem; max-width: 420px; width: 90%; position: relative; transform: scale(0.9) translateY(20px); transition: all 0.3s; }
+        .email-modal-overlay.active .email-modal { transform: scale(1) translateY(0); }
+        .email-modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; color: var(--text-muted); font-size: 1.5rem; cursor: pointer; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s; }
+        .email-modal-close:hover { color: var(--text-primary); background: rgba(255,255,255,0.1); }
+        .email-modal h3 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; text-align: center; }
+        .email-modal-subtitle { color: var(--text-secondary); text-align: center; margin-bottom: 2rem; font-size: 0.95rem; }
+        .email-address-box { background: rgba(255,255,255,0.05); border: 1px solid var(--dark-border); border-radius: 12px; padding: 1rem 1.25rem; display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; }
+        .email-address-box span { color: var(--purple-300); font-size: 1rem; }
+        .copy-btn { background: var(--gradient-main); border: none; color: white; padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 0.4rem; }
+        .copy-btn:hover { transform: scale(1.05); }
+        .copy-btn.copied { background: linear-gradient(135deg, #22c55e, #16a34a); }
+        .email-options { display: flex; flex-direction: column; gap: 0.75rem; }
+        .email-option { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem; background: rgba(255,255,255,0.03); border: 1px solid var(--dark-border); border-radius: 12px; text-decoration: none; color: var(--text-primary); transition: all 0.3s; }
+        .email-option:hover { background: rgba(255,255,255,0.08); border-color: rgba(139,92,246,0.3); transform: translateX(5px); }
+        .email-option-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; }
+        .email-option-icon.gmail { background: linear-gradient(135deg, #EA4335, #FBBC05); color: white; }
+        .email-option-icon.seznam { background: linear-gradient(135deg, #CC0000, #FF0000); color: white; }
+        .email-option-icon.outlook { background: linear-gradient(135deg, #0078D4, #00BCF2); color: white; }
+        .email-option-icon.default { background: var(--gradient-main); color: white; }
+        .email-option-text { flex: 1; }
+        .email-option-text strong { display: block; font-weight: 600; margin-bottom: 0.15rem; }
+        .email-option-text span { font-size: 0.8rem; color: var(--text-muted); }
+        .email-option i.fa-arrow-right { color: var(--text-muted); transition: all 0.3s; }
+        .email-option:hover i.fa-arrow-right { color: var(--purple-400); transform: translateX(3px); }
+        
+        footer { border-top: 1px solid var(--dark-border); padding: 4rem 0 2rem; }
+        .footer-content { display: grid; grid-template-columns: 1.5fr repeat(2, 1fr); gap: 4rem; margin-bottom: 3rem; }
+        .footer-brand .logo { margin-bottom: 1rem; }
+        .footer-brand p { color: var(--text-secondary); max-width: 300px; margin-bottom: 1.5rem; }
+        .footer-social { display: flex; gap: 0.75rem; }
+        .footer-social a { width: 44px; height: 44px; background: rgba(255,255,255,0.05); border: 1px solid var(--dark-border); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--text-secondary); font-size: 1.25rem; transition: all 0.3s; }
+        .footer-social a:hover { background: var(--purple-600); border-color: var(--purple-500); color: white; transform: translateY(-3px); }
+        .footer-col h4 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; margin-bottom: 1.25rem; }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 0.75rem; }
+        .footer-col a { color: var(--text-secondary); text-decoration: none; transition: color 0.3s; }
+        .footer-col a:hover { color: var(--purple-400); }
+        .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid var(--dark-border); }
+        .footer-bottom p { color: var(--text-muted); font-size: 0.9rem; }
+
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.6s; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
         .stagger-1 { transition-delay: 0.1s; }
         .stagger-2 { transition-delay: 0.2s; }
         .stagger-3 { transition-delay: 0.3s; }
-        .stagger-4 { transition-delay: 0.4s; }
+
+        @media (max-width: 1024px) {
+            .hero-content { grid-template-columns: 1fr; text-align: center; }
+            .hero-cta, .hero-stats { justify-content: center; }
+            .hero-visual { order: -1; }
+            .browser-mockup { max-width: 400px; }
+            .floating-badge-1 { right: 0; }
+            .floating-badge-2 { left: 0; }
+            .services-grid { grid-template-columns: 1fr; }
+            .pricing-simple { grid-template-columns: 1fr; max-width: 500px; }
+            .process-timeline { grid-template-columns: repeat(2, 1fr); }
+            .process-timeline::before { display: none; }
+            .footer-content { grid-template-columns: 1fr; text-align: center; }
+            .footer-social { justify-content: center; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { position: fixed; top: 0; right: -100%; width: 80%; max-width: 350px; height: 100vh; background: var(--dark); flex-direction: column; padding: 6rem 2rem 2rem; gap: 2rem; transition: right 0.4s; box-shadow: -10px 0 50px rgba(0,0,0,0.5); border-left: 1px solid var(--dark-border); }
+            .nav-links.active { right: 0; }
+            .mobile-toggle { display: flex; }
+            .mobile-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+            .mobile-toggle.active span:nth-child(2) { opacity: 0; }
+            .mobile-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+            .hero { padding: 7rem 0 3rem; }
+            .hero-stats { flex-direction: column; gap: 1.5rem; align-items: center; }
+            .stat { text-align: center; }
+            .stat-value { justify-content: center; }
+            .browser-mockup { max-width: 300px; }
+            .floating-badge { display: none; }
+            .mockup-hero-image i { font-size: 1rem; }
+            .mockup-hero-buttons { flex-direction: column; gap: 0.3rem; }
+            .mockup-stats { display: none; }
+            .mockup-cards { grid-template-columns: repeat(2, 1fr); }
+            .portfolio-showcase { grid-template-columns: 1fr; }
+            .process-timeline { grid-template-columns: 1fr; }
+            .cta-box { padding: 3rem 1.5rem; }
+            .cta-buttons { flex-direction: column; }
+            .cta-buttons .btn { width: 100%; justify-content: center; }
+            .trust-badge { flex-direction: column; gap: 0.5rem; padding: 1.5rem 2rem; }
+            .trust-text { align-items: center; }
+            .trust-features { flex-direction: column; gap: 1rem; }
+            .footer-col { text-align: center; }
+        }
     </style>
 </head>
 <body>
-    <!-- Custom Cursor -->
     <div class="cursor"></div>
     <div class="cursor-ring"></div>
-
-    <!-- Background -->
     <div class="bg-pattern">
         <div class="bg-grid"></div>
         <div class="bg-orb bg-orb-1"></div>
@@ -1869,66 +345,41 @@
         <div class="bg-orb bg-orb-3"></div>
     </div>
 
-    <!-- Header -->
     <header>
         <div class="container">
             <nav>
-                <a href="#" class="logo">
-                    <img src="logo.png" alt="BYNYZ - Tvorba webových stránek" onerror="this.style.display='none'">
-                    <span class="logo-text">BYNYZ</span>
-                </a>
+                <a href="#" class="logo"><span class="logo-text">BYNYZ</span></a>
                 <div class="nav-links">
                     <a href="#sluzby">Služby</a>
                     <a href="#portfolio">Portfolio</a>
                     <a href="#cenik">Ceník</a>
                     <a href="#proces">Jak to funguje</a>
-                    <a href="#kontakt" class="nav-cta">
-                        <i class="fab fa-telegram"></i> Kontakt
-                    </a>
+                    <a href="#kontakt" class="nav-cta"><i class="fab fa-telegram"></i> Kontakt</a>
                 </div>
-                <button class="mobile-toggle" aria-label="Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
             </nav>
         </div>
     </header>
 
     <main>
-        <!-- Hero Section -->
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-text">
-                        <div class="hero-tagline">
-                            <i class="fas fa-bolt"></i>
-                            Profesionální weby pro české firmy
-                        </div>
+                        <div class="hero-tagline"><i class="fas fa-bolt"></i> Profesionální weby pro české firmy</div>
                         <h1>
                             <span class="line"><span>Vaše firma si zaslouží</span></span>
                             <span class="line"><span>web, který</span></span>
                             <span class="line"><span class="highlight">přitahuje zákazníky</span></span>
                         </h1>
-                        <p class="hero-description">
-                            Profesionální web do 14 dnů, který pracuje za vás 24/7. Vy se staráte o byznys, já o to, aby vás zákazníci našli online.
-                        </p>
+                        <p class="hero-description">Profesionální web do 14 dnů, který pracuje za vás 24/7. Vy se staráte o byznys, já o to, aby vás zákazníci našli online.</p>
                         <div class="hero-cta">
-                            <a href="https://t.me/bynyzdesign" target="_blank" class="btn btn-primary">
-                                <i class="fab fa-telegram"></i> Telegram
-                            </a>
-                            <a href="#" class="btn btn-secondary email-btn">
-                                <i class="fas fa-envelope"></i> Email
-                            </a>
+                            <a href="https://t.me/bynyzdesign" target="_blank" class="btn btn-primary"><i class="fab fa-telegram"></i> Telegram</a>
+                            <a href="#" class="btn btn-secondary email-btn"><i class="fas fa-envelope"></i> Email</a>
                         </div>
                         <div class="hero-stats">
                             <div class="stat">
-                                <div class="stat-value">
-                                    12
-                                    <div class="stars">
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                </div>
+                                <div class="stat-value">12 <div class="stars"><i class="fas fa-star"></i></div></div>
                                 <div class="stat-label">Spokojených klientů</div>
                             </div>
                             <div class="stat">
@@ -1944,88 +395,77 @@
                     <div class="hero-visual">
                         <div class="browser-mockup">
                             <div class="browser-header">
-                                <div class="browser-dot"></div>
-                                <div class="browser-dot"></div>
-                                <div class="browser-dot"></div>
-                                <div class="browser-url">vasefirma.cz</div>
+                                <div class="browser-dots"><div class="browser-dot"></div><div class="browser-dot"></div><div class="browser-dot"></div></div>
+                                <div class="browser-url"><i class="fas fa-lock"></i> vasefirma.cz</div>
                             </div>
                             <div class="browser-content">
-                                <div class="browser-skeleton">
-                                    <div class="skeleton-nav">
-                                        <div class="skeleton-logo"></div>
-                                        <div class="skeleton-menu">
-                                            <div class="skeleton-menu-item"></div>
-                                            <div class="skeleton-menu-item"></div>
-                                            <div class="skeleton-menu-item"></div>
+                                <div class="web-mockup">
+                                    <div class="mockup-navbar">
+                                        <div class="mockup-logo">
+                                            <div class="mockup-logo-icon"><i class="fas fa-cube"></i></div>
+                                            <span class="mockup-logo-text">VašeFirma</span>
+                                        </div>
+                                        <div class="mockup-nav-items"><div class="mockup-nav-item"></div><div class="mockup-nav-item"></div><div class="mockup-nav-item"></div></div>
+                                        <div class="mockup-nav-cta">Kontakt</div>
+                                    </div>
+                                    <div class="mockup-hero">
+                                        <div class="mockup-hero-text">
+                                            <div class="mockup-hero-badge"><i class="fas fa-star"></i> #1 v oboru</div>
+                                            <h2 class="mockup-hero-title">Kvalitní služby<br>pro <span class="accent">vaše potřeby</span></h2>
+                                            <p class="mockup-hero-desc">Profesionální přístup a spokojenost zákazníků na prvním místě.</p>
+                                            <div class="mockup-hero-buttons">
+                                                <div class="mockup-btn-primary"><i class="fas fa-arrow-right"></i> Zjistit více</div>
+                                                <div class="mockup-btn-secondary">Ceník</div>
+                                            </div>
+                                        </div>
+                                        <div class="mockup-hero-image"><i class="fas fa-briefcase"></i><span>Váš obsah</span></div>
+                                    </div>
+                                    <div class="mockup-stats">
+                                        <div class="mockup-stat">
+                                            <div class="mockup-stat-icon"><i class="fas fa-users"></i></div>
+                                            <div class="mockup-stat-text"><span class="mockup-stat-value">500+</span><span class="mockup-stat-label">Klientů</span></div>
+                                        </div>
+                                        <div class="mockup-stat">
+                                            <div class="mockup-stat-icon"><i class="fas fa-star"></i></div>
+                                            <div class="mockup-stat-text"><span class="mockup-stat-value">4.9</span><span class="mockup-stat-label">Hodnocení</span></div>
+                                        </div>
+                                        <div class="mockup-stat">
+                                            <div class="mockup-stat-icon"><i class="fas fa-clock"></i></div>
+                                            <div class="mockup-stat-text"><span class="mockup-stat-value">10+ let</span><span class="mockup-stat-label">Zkušeností</span></div>
                                         </div>
                                     </div>
-                                    <div class="skeleton-hero">
-                                        <div class="skeleton-title"></div>
-                                        <div class="skeleton-subtitle"></div>
-                                        <div class="skeleton-subtitle" style="width: 60%;"></div>
-                                        <div class="skeleton-btn"></div>
-                                    </div>
-                                    <div class="skeleton-cards">
-                                        <div class="skeleton-card"></div>
-                                        <div class="skeleton-card"></div>
-                                        <div class="skeleton-card"></div>
+                                    <div class="mockup-cards">
+                                        <div class="mockup-card"><div class="mockup-card-icon"><i class="fas fa-cog"></i></div><h4>Služba 1</h4><p>Popis služby</p></div>
+                                        <div class="mockup-card"><div class="mockup-card-icon"><i class="fas fa-chart-line"></i></div><h4>Služba 2</h4><p>Popis služby</p></div>
+                                        <div class="mockup-card"><div class="mockup-card-icon"><i class="fas fa-shield-alt"></i></div><h4>Služba 3</h4><p>Popis služby</p></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="floating-badge floating-badge-1">
-                            <i class="fas fa-mobile-alt"></i>
-                            <span>Responzivní</span>
-                        </div>
-                        <div class="floating-badge floating-badge-2">
-                            <i class="fas fa-check check"></i>
-                            <span>SEO optimalizace</span>
-                        </div>
+                        <div class="floating-badge floating-badge-1"><i class="fas fa-mobile-alt"></i><span>Responzivní</span></div>
+                        <div class="floating-badge floating-badge-2"><i class="fas fa-check check"></i><span>SEO optimalizace</span></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Trust Section - Social Proof -->
         <section class="trust-section">
             <div class="container">
                 <div class="trust-content">
                     <div class="trust-badge">
-                        <div class="trust-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="trust-text">
-                            <span class="trust-rating">5.0 z 5 hvězdiček</span>
-                            <span class="trust-count">na základě 12 hodnocení</span>
-                        </div>
+                        <div class="trust-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <div class="trust-text"><span class="trust-rating">5.0 z 5 hvězdiček</span><span class="trust-count">na základě 12 hodnocení</span></div>
                     </div>
                     <div class="trust-features">
-                        <div class="trust-feature">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>100% spokojenost garantována</span>
-                        </div>
-                        <div class="trust-feature">
-                            <i class="fas fa-clock"></i>
-                            <span>Rychlé dodání do 7–14 dní</span>
-                        </div>
-                        <div class="trust-feature">
-                            <i class="fas fa-comments"></i>
-                            <span>Komunikace v češtině</span>
-                        </div>
-                        <div class="trust-feature">
-                            <i class="fas fa-redo"></i>
-                            <span>Neomezené revize</span>
-                        </div>
+                        <div class="trust-feature"><i class="fas fa-shield-alt"></i><span>100% spokojenost garantována</span></div>
+                        <div class="trust-feature"><i class="fas fa-clock"></i><span>Rychlé dodání do 7–14 dní</span></div>
+                        <div class="trust-feature"><i class="fas fa-comments"></i><span>Komunikace v češtině</span></div>
+                        <div class="trust-feature"><i class="fas fa-redo"></i><span>Neomezené revize</span></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Services Section -->
         <section id="sluzby" class="services">
             <div class="container">
                 <div class="section-header">
@@ -2035,73 +475,39 @@
                 </div>
                 <div class="services-grid">
                     <div class="service-card fade-in">
-                        <div class="service-icon">
-                            <i class="fas fa-palette"></i>
-                        </div>
+                        <div class="service-icon"><i class="fas fa-palette"></i></div>
                         <h3>Webový design</h3>
                         <p>Originální a moderní design, který zaujme vaše zákazníky a odliší vás od konkurence.</p>
                         <div class="service-features">
-                            <div class="service-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Unikátní vzhled na míru</span>
-                            </div>
-                            <div class="service-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Responzivní pro všechna zařízení</span>
-                            </div>
-                            <div class="service-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Rychlé načítání stránek</span>
-                            </div>
+                            <div class="service-feature"><i class="fas fa-check"></i><span>Unikátní vzhled na míru</span></div>
+                            <div class="service-feature"><i class="fas fa-check"></i><span>Responzivní pro všechna zařízení</span></div>
+                            <div class="service-feature"><i class="fas fa-check"></i><span>Rychlé načítání stránek</span></div>
                         </div>
                     </div>
                     <div class="service-card fade-in stagger-1">
-                        <div class="service-icon">
-                            <i class="fas fa-store"></i>
-                        </div>
+                        <div class="service-icon"><i class="fas fa-store"></i></div>
                         <h3>Weby pro firmy</h3>
                         <p>Profesionální prezentace pro restaurace, obchody, řemeslníky a další místní podnikatele.</p>
                         <div class="service-features">
-                            <div class="service-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Galerie a ceníky</span>
-                            </div>
-                            <div class="service-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Kontaktní formuláře</span>
-                            </div>
-                            <div class="service-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Mapy a navigace</span>
-                            </div>
+                            <div class="service-feature"><i class="fas fa-check"></i><span>Galerie a ceníky</span></div>
+                            <div class="service-feature"><i class="fas fa-check"></i><span>Kontaktní formuláře</span></div>
+                            <div class="service-feature"><i class="fas fa-check"></i><span>Mapy a navigace</span></div>
                         </div>
                     </div>
                     <div class="service-card fade-in stagger-2">
-                        <div class="service-icon">
-                            <i class="fas fa-rocket"></i>
-                        </div>
+                        <div class="service-icon"><i class="fas fa-rocket"></i></div>
                         <h3>SEO optimalizace</h3>
                         <p>Váš web bude vidět na Googlu. Přivedu k vám zákazníky, kteří hledají vaše služby.</p>
                         <div class="service-features">
-                            <div class="service-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Lepší pozice ve vyhledávání</span>
-                            </div>
-                            <div class="service-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Rychlost načítání</span>
-                            </div>
-                            <div class="service-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Správné nastavení meta tagů</span>
-                            </div>
+                            <div class="service-feature"><i class="fas fa-check"></i><span>Lepší pozice ve vyhledávání</span></div>
+                            <div class="service-feature"><i class="fas fa-check"></i><span>Rychlost načítání</span></div>
+                            <div class="service-feature"><i class="fas fa-check"></i><span>Správné nastavení meta tagů</span></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Portfolio Section -->
         <section id="portfolio" class="portfolio">
             <div class="container">
                 <div class="section-header">
@@ -2112,45 +518,25 @@
                 <div class="portfolio-showcase">
                     <div class="portfolio-card fade-in">
                         <div class="portfolio-coming">Brzy</div>
-                        <div class="portfolio-placeholder">
-                            <i class="fas fa-utensils"></i>
-                            <h4>Gastronomie & Hospitality</h4>
-                            <p>Restaurace, kavárny, hotely</p>
-                        </div>
+                        <div class="portfolio-placeholder"><i class="fas fa-utensils"></i><h4>Gastronomie & Hospitality</h4><p>Restaurace, kavárny, hotely</p></div>
                     </div>
                     <div class="portfolio-card fade-in stagger-1">
                         <div class="portfolio-coming">Brzy</div>
-                        <div class="portfolio-placeholder">
-                            <i class="fas fa-cut"></i>
-                            <h4>Služby & Wellness</h4>
-                            <p>Salony, fitness, zdravotní péče</p>
-                        </div>
+                        <div class="portfolio-placeholder"><i class="fas fa-cut"></i><h4>Služby & Wellness</h4><p>Salony, fitness, zdravotní péče</p></div>
                     </div>
                     <div class="portfolio-card fade-in stagger-2">
                         <div class="portfolio-coming">Brzy</div>
-                        <div class="portfolio-placeholder">
-                            <i class="fas fa-tools"></i>
-                            <h4>Stavebnictví & Řemesla</h4>
-                            <p>Stavební firmy, řemeslníci, montáže</p>
-                        </div>
+                        <div class="portfolio-placeholder"><i class="fas fa-tools"></i><h4>Stavebnictví & Řemesla</h4><p>Stavební firmy, řemeslníci, montáže</p></div>
                     </div>
                     <div class="portfolio-card fade-in stagger-3">
                         <div class="portfolio-coming">Brzy</div>
-                        <div class="portfolio-placeholder">
-                            <i class="fas fa-shopping-bag"></i>
-                            <h4>Retail & E-commerce</h4>
-                            <p>Obchody, showroomy, velkoobchod</p>
-                        </div>
+                        <div class="portfolio-placeholder"><i class="fas fa-shopping-bag"></i><h4>Retail & E-commerce</h4><p>Obchody, showroomy, velkoobchod</p></div>
                     </div>
                 </div>
-                <p style="text-align: center; margin-top: 2rem; color: var(--text-secondary);">
-                    <i class="fas fa-info-circle" style="color: var(--purple-400);"></i>
-                    Nepracuji s šablonami — každý web je originál na míru vašemu oboru.
-                </p>
+                <p style="text-align: center; margin-top: 2rem; color: var(--text-secondary);"><i class="fas fa-info-circle" style="color: var(--purple-400);"></i> Nepracuji s šablonami — každý web je originál na míru vašemu oboru.</p>
             </div>
         </section>
 
-        <!-- Pricing Section - ZJEDNODUŠENÁ -->
         <section id="cenik" class="pricing">
             <div class="container">
                 <div class="section-header">
@@ -2158,221 +544,117 @@
                     <h2 class="section-title">Jednoduchý ceník</h2>
                     <p class="section-subtitle">Vyberte si podle rozsahu vašeho projektu</p>
                 </div>
-                
                 <div class="pricing-simple">
-                    <!-- Menší projekt -->
                     <div class="pricing-block fade-in">
                         <div class="pricing-block-header">
-                            <div class="pricing-block-title">
-                                <h3>Menší projekt</h3>
-                                <p>Jednostránkový web</p>
-                            </div>
-                            <div class="pricing-block-price">
-                                <div class="pricing-from">od</div>
-                                <div class="pricing-amount">3 990</div>
-                                <div class="pricing-currency">Kč</div>
-                            </div>
+                            <div class="pricing-block-title"><h3>Menší projekt</h3><p>Jednostránkový web</p></div>
+                            <div class="pricing-block-price"><div class="pricing-from">od</div><div class="pricing-amount">3 990</div><div class="pricing-currency">Kč</div></div>
                         </div>
                         <div class="pricing-block-features">
-                            <div class="pricing-block-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Responzivní design</span>
-                            </div>
-                            <div class="pricing-block-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Kontaktní formulář</span>
-                            </div>
-                            <div class="pricing-block-feature">
-                                <i class="fas fa-check"></i>
-                                <span>SEO základy</span>
-                            </div>
-                            <div class="pricing-block-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Dodání do 7 dní</span>
-                            </div>
+                            <div class="pricing-block-feature"><i class="fas fa-check"></i><span>Responzivní design</span></div>
+                            <div class="pricing-block-feature"><i class="fas fa-check"></i><span>Kontaktní formulář</span></div>
+                            <div class="pricing-block-feature"><i class="fas fa-check"></i><span>SEO základy</span></div>
+                            <div class="pricing-block-feature"><i class="fas fa-check"></i><span>Dodání do 7 dní</span></div>
                         </div>
                         <div class="pricing-buttons">
-                            <a href="https://t.me/bynyzdesign" target="_blank" class="btn btn-secondary">
-                                <i class="fab fa-telegram"></i> Telegram
-                            </a>
-                            <a href="#" class="btn btn-outline email-btn">
-                                <i class="fas fa-envelope"></i> Email
-                            </a>
+                            <a href="https://t.me/bynyzdesign" target="_blank" class="btn btn-secondary"><i class="fab fa-telegram"></i> Telegram</a>
+                            <a href="#" class="btn btn-outline email-btn"><i class="fas fa-envelope"></i> Email</a>
                         </div>
                     </div>
-
-                    <!-- Větší projekt -->
                     <div class="pricing-block fade-in stagger-1">
                         <div class="pricing-block-header">
-                            <div class="pricing-block-title">
-                                <h3>Větší projekt</h3>
-                                <p>Vícestránkový web</p>
-                            </div>
-                            <div class="pricing-block-price">
-                                <div class="pricing-from">od</div>
-                                <div class="pricing-amount">7 990</div>
-                                <div class="pricing-currency">Kč</div>
-                            </div>
+                            <div class="pricing-block-title"><h3>Větší projekt</h3><p>Vícestránkový web</p></div>
+                            <div class="pricing-block-price"><div class="pricing-from">od</div><div class="pricing-amount">7 990</div><div class="pricing-currency">Kč</div></div>
                         </div>
                         <div class="pricing-block-features">
-                            <div class="pricing-block-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Více stránek dle potřeby</span>
-                            </div>
-                            <div class="pricing-block-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Prémiový design + animace</span>
-                            </div>
-                            <div class="pricing-block-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Pokročilé SEO</span>
-                            </div>
-                            <div class="pricing-block-feature">
-                                <i class="fas fa-check"></i>
-                                <span>Google mapa, galerie, sociální sítě</span>
-                            </div>
+                            <div class="pricing-block-feature"><i class="fas fa-check"></i><span>Vše z menšího projektu</span></div>
+                            <div class="pricing-block-feature"><i class="fas fa-check"></i><span>Více podstránek</span></div>
+                            <div class="pricing-block-feature"><i class="fas fa-check"></i><span>Pokročilé SEO</span></div>
+                            <div class="pricing-block-feature"><i class="fas fa-check"></i><span>Dodání do 14 dní</span></div>
                         </div>
                         <div class="pricing-buttons">
-                            <a href="https://t.me/bynyzdesign" target="_blank" class="btn btn-primary">
-                                <i class="fab fa-telegram"></i> Telegram
-                            </a>
-                            <a href="#" class="btn btn-outline email-btn">
-                                <i class="fas fa-envelope"></i> Email
-                            </a>
+                            <a href="https://t.me/bynyzdesign" target="_blank" class="btn btn-primary"><i class="fab fa-telegram"></i> Telegram</a>
+                            <a href="#" class="btn btn-outline email-btn"><i class="fas fa-envelope"></i> Email</a>
                         </div>
                     </div>
                 </div>
-
-                <div class="pricing-note fade-in">
-                    <p>
-                        <strong>💡 Jiné požadavky?</strong> Napište mi a domluvíme se na ceně přesně podle vašich potřeb. Rezervační systémy, e-shop integrace a další funkce řešíme individuálně.
-                    </p>
-                </div>
+                <div class="pricing-note"><p><strong>Potřebujete něco speciálního?</strong> Napište mi a domluvíme se na ceně podle vašich požadavků.</p></div>
             </div>
         </section>
 
-        <!-- Process Section -->
         <section id="proces" class="process">
             <div class="container">
                 <div class="section-header">
                     <div class="section-label">Proces</div>
                     <h2 class="section-title">Jak to funguje</h2>
-                    <p class="section-subtitle">Od první zprávy k hotovému webu</p>
+                    <p class="section-subtitle">Jednoduchý postup od první zprávy po hotový web</p>
                 </div>
                 <div class="process-timeline">
-                    <div class="process-step fade-in">
-                        <div class="process-number">1</div>
-                        <h3>Konzultace</h3>
-                        <p>Napíšete mi, probereme vaše představy a cíle. Zdarma a nezávazně.</p>
-                    </div>
-                    <div class="process-step fade-in stagger-1">
-                        <div class="process-number">2</div>
-                        <h3>Návrh</h3>
-                        <p>Připravím návrh designu a struktury webu podle vašich potřeb.</p>
-                    </div>
-                    <div class="process-step fade-in stagger-2">
-                        <div class="process-number">3</div>
-                        <h3>Tvorba</h3>
-                        <p>Vytvořím váš web a průběžně vám ukazuji postup. Můžete připomínkovat.</p>
-                    </div>
-                    <div class="process-step fade-in stagger-3">
-                        <div class="process-number">4</div>
-                        <h3>Spuštění</h3>
-                        <p>Web spustíme a vy můžete začít získávat nové zákazníky!</p>
-                    </div>
+                    <div class="process-step fade-in"><div class="process-number">1</div><h3>Kontaktujete mě</h3><p>Napište mi na Telegram nebo email. Řeknete mi, co potřebujete.</p></div>
+                    <div class="process-step fade-in stagger-1"><div class="process-number">2</div><h3>Domluvíme detaily</h3><p>Probereme vaše představy, požadavky a dohodneme se na ceně.</p></div>
+                    <div class="process-step fade-in stagger-2"><div class="process-number">3</div><h3>Vytvořím web</h3><p>Pustím se do práce. Průběžně vám ukážu, jak web vypadá.</p></div>
+                    <div class="process-step fade-in stagger-3"><div class="process-number">4</div><h3>Spuštění</h3><p>Po vašem schválení web spustíme. Máte hotovo!</p></div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA Section -->
         <section id="kontakt" class="cta">
             <div class="container">
-                <div class="cta-box fade-in">
-                    <h2>Pojďme vytvořit váš nový web</h2>
-                    <p>Ozvěte se mi a do 6 hodin se vám ozvu zpět. Konzultace je zdarma!</p>
+                <div class="cta-box">
+                    <h2>Připraveni začít?</h2>
+                    <p>Napište mi a do 6 hodin vám odpovím. Probereme, jak může váš nový web vypadat.</p>
                     <div class="cta-buttons">
-                        <a href="https://t.me/bynyzdesign" target="_blank" class="btn btn-primary cta-telegram">
-                            <i class="fab fa-telegram"></i> Telegram
-                        </a>
-                        <a href="#" class="btn btn-secondary email-btn">
-                            <i class="fas fa-envelope"></i> Email
-                        </a>
+                        <a href="https://t.me/bynyzdesign" target="_blank" class="btn btn-primary cta-telegram"><i class="fab fa-telegram"></i> Napsat na Telegram</a>
+                        <a href="#" class="btn btn-secondary email-btn"><i class="fas fa-envelope"></i> Poslat email</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Email Modal -->
     <div class="email-modal-overlay" id="emailModal">
         <div class="email-modal">
-            <button class="email-modal-close" id="closeEmailModal">
-                <i class="fas fa-times"></i>
-            </button>
-            <h3>Napište mi email</h3>
-            <p class="email-modal-subtitle">Vyberte si jak mě chcete kontaktovat</p>
-            
+            <button class="email-modal-close" id="closeEmailModal"><i class="fas fa-times"></i></button>
+            <h3>Kontaktujte mě emailem</h3>
+            <p class="email-modal-subtitle">Vyberte si, jak chcete email otevřít</p>
             <div class="email-address-box">
                 <span>support@bynyz.com</span>
-                <button class="copy-btn" id="copyEmail">
-                    <i class="fas fa-copy"></i> Kopírovat
-                </button>
+                <button class="copy-btn" id="copyEmail"><i class="fas fa-copy"></i> Kopírovat</button>
             </div>
-            
             <div class="email-options">
                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=support@bynyz.com&su=Poptávka webu" target="_blank" class="email-option">
-                    <div class="email-option-icon gmail">
-                        <i class="fab fa-google"></i>
-                    </div>
-                    <div class="email-option-text">
-                        <strong>Gmail</strong>
-                        <span>Otevřít v Google Mail</span>
-                    </div>
+                    <div class="email-option-icon gmail"><i class="fab fa-google"></i></div>
+                    <div class="email-option-text"><strong>Gmail</strong><span>Otevřít v Gmail</span></div>
                     <i class="fas fa-arrow-right"></i>
                 </a>
-                
                 <a href="https://email.seznam.cz/newMessageScreen?to=support@bynyz.com&subject=Poptávka webu" target="_blank" class="email-option">
-                    <div class="email-option-icon seznam">
-                        <i class="fas fa-at"></i>
-                    </div>
-                    <div class="email-option-text">
-                        <strong>Seznam Email</strong>
-                        <span>Otevřít v Seznam.cz</span>
-                    </div>
+                    <div class="email-option-icon seznam"><i class="fas fa-at"></i></div>
+                    <div class="email-option-text"><strong>Seznam Email</strong><span>Otevřít v Seznam</span></div>
                     <i class="fas fa-arrow-right"></i>
                 </a>
-                
                 <a href="https://outlook.live.com/mail/0/deeplink/compose?to=support@bynyz.com&subject=Poptávka webu" target="_blank" class="email-option">
-                    <div class="email-option-icon outlook">
-                        <i class="fab fa-microsoft"></i>
-                    </div>
-                    <div class="email-option-text">
-                        <strong>Outlook</strong>
-                        <span>Otevřít v Microsoft Outlook</span>
-                    </div>
+                    <div class="email-option-icon outlook"><i class="fab fa-microsoft"></i></div>
+                    <div class="email-option-text"><strong>Outlook</strong><span>Otevřít v Outlook</span></div>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="mailto:support@bynyz.com?subject=Poptávka webu" class="email-option">
+                    <div class="email-option-icon default"><i class="fas fa-envelope"></i></div>
+                    <div class="email-option-text"><strong>Výchozí aplikace</strong><span>Otevřít v emailovém klientu</span></div>
                     <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <a href="#" class="logo">
-                        <img src="logo.png" alt="BYNYZ - Tvorba webových stránek" onerror="this.style.display='none'">
-                        <span class="logo-text">BYNYZ</span>
-                    </a>
+                    <a href="#" class="logo"><span class="logo-text">BYNYZ</span></a>
                     <p>Moderní webové stránky pro české firmy. Vaše podnikání si zaslouží profesionální prezentaci online.</p>
                     <div class="footer-social">
-                        <a href="https://t.me/bynyzdesign" target="_blank" aria-label="Telegram">
-                            <i class="fab fa-telegram"></i>
-                        </a>
-                        <a href="#" class="email-btn" aria-label="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
+                        <a href="https://t.me/bynyzdesign" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="email-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -2393,90 +675,40 @@
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 BYNYZ. Všechna práva vyhrazena.</p>
-            </div>
+            <div class="footer-bottom"><p>&copy; 2024 BYNYZ. Všechna práva vyhrazena.</p></div>
         </div>
     </footer>
 
     <script>
-        // ==========================================
-        // CUSTOM CURSOR - PROFESIONÁLNÍ VERZE
-        // ==========================================
         const cursor = document.querySelector('.cursor');
         const cursorRing = document.querySelector('.cursor-ring');
-
-        if (window.innerWidth > 768) {
-            let mouseX = 0, mouseY = 0;
-            let cursorX = 0, cursorY = 0;
-            let ringX = 0, ringY = 0;
-
-            document.addEventListener('mousemove', (e) => {
-                mouseX = e.clientX;
-                mouseY = e.clientY;
-            });
-
-            // Smooth cursor animation
+        if (window.innerWidth > 768 && cursor && cursorRing) {
+            let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0, ringX = 0, ringY = 0;
+            document.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
             function animateCursor() {
-                // Cursor dot - faster follow
-                cursorX += (mouseX - cursorX) * 0.2;
-                cursorY += (mouseY - cursorY) * 0.2;
-                cursor.style.left = cursorX + 'px';
-                cursor.style.top = cursorY + 'px';
-                cursor.style.transform = 'translate(-50%, -50%)';
-
-                // Ring - slower follow for smooth effect
-                ringX += (mouseX - ringX) * 0.1;
-                ringY += (mouseY - ringY) * 0.1;
-                cursorRing.style.left = ringX + 'px';
-                cursorRing.style.top = ringY + 'px';
-
+                cursorX += (mouseX - cursorX) * 0.2; cursorY += (mouseY - cursorY) * 0.2;
+                cursor.style.left = cursorX + 'px'; cursor.style.top = cursorY + 'px'; cursor.style.transform = 'translate(-50%, -50%)';
+                ringX += (mouseX - ringX) * 0.1; ringY += (mouseY - ringY) * 0.1;
+                cursorRing.style.left = ringX + 'px'; cursorRing.style.top = ringY + 'px';
                 requestAnimationFrame(animateCursor);
             }
             animateCursor();
-
-            // Hover effects
             document.querySelectorAll('a, button').forEach(el => {
-                el.addEventListener('mouseenter', () => {
-                    cursor.classList.add('hover');
-                    cursorRing.classList.add('hover');
-                });
-                el.addEventListener('mouseleave', () => {
-                    cursor.classList.remove('hover');
-                    cursorRing.classList.remove('hover');
-                });
-            });
-
-            // Click effect
-            document.addEventListener('mousedown', () => {
-                cursorRing.classList.add('clicking');
-            });
-            document.addEventListener('mouseup', () => {
-                cursorRing.classList.remove('clicking');
+                el.addEventListener('mouseenter', () => { cursor.classList.add('hover'); cursorRing.classList.add('hover'); });
+                el.addEventListener('mouseleave', () => { cursor.classList.remove('hover'); cursorRing.classList.remove('hover'); });
             });
         }
 
-        // ==========================================
-        // HEADER SCROLL
-        // ==========================================
         const header = document.querySelector('header');
-        
-        window.addEventListener('scroll', () => {
-            header.classList.toggle('scrolled', window.scrollY > 50);
-        }, { passive: true });
+        window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 50); }, { passive: true });
 
-        // ==========================================
-        // MOBILE MENU
-        // ==========================================
         const mobileToggle = document.querySelector('.mobile-toggle');
         const navLinks = document.querySelector('.nav-links');
-
         mobileToggle.addEventListener('click', () => {
             mobileToggle.classList.toggle('active');
             navLinks.classList.toggle('active');
             document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
         });
-
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileToggle.classList.remove('active');
@@ -2485,92 +717,35 @@
             });
         });
 
-        // ==========================================
-        // SMOOTH SCROLL
-        // ==========================================
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
             });
         });
-
-        // ==========================================
-        // SCROLL ANIMATIONS
-        // ==========================================
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
 
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
+            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // ==========================================
-        // EMAIL MODAL
-        // ==========================================
         const emailModal = document.getElementById('emailModal');
         const closeEmailModal = document.getElementById('closeEmailModal');
         const copyEmailBtn = document.getElementById('copyEmail');
-        const emailButtons = document.querySelectorAll('.email-btn');
-
-        // Open modal
-        emailButtons.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                emailModal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
+        document.querySelectorAll('.email-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => { e.preventDefault(); emailModal.classList.add('active'); document.body.style.overflow = 'hidden'; });
         });
-
-        // Close modal
-        closeEmailModal.addEventListener('click', () => {
-            emailModal.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-
-        // Close on overlay click
-        emailModal.addEventListener('click', (e) => {
-            if (e.target === emailModal) {
-                emailModal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-
-        // Close on Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && emailModal.classList.contains('active')) {
-                emailModal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-
-        // Copy email
+        closeEmailModal.addEventListener('click', () => { emailModal.classList.remove('active'); document.body.style.overflow = ''; });
+        emailModal.addEventListener('click', (e) => { if (e.target === emailModal) { emailModal.classList.remove('active'); document.body.style.overflow = ''; } });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && emailModal.classList.contains('active')) { emailModal.classList.remove('active'); document.body.style.overflow = ''; } });
         copyEmailBtn.addEventListener('click', () => {
             navigator.clipboard.writeText('support@bynyz.com').then(() => {
                 copyEmailBtn.innerHTML = '<i class="fas fa-check"></i> Zkopírováno!';
                 copyEmailBtn.classList.add('copied');
-                setTimeout(() => {
-                    copyEmailBtn.innerHTML = '<i class="fas fa-copy"></i> Kopírovat';
-                    copyEmailBtn.classList.remove('copied');
-                }, 2000);
+                setTimeout(() => { copyEmailBtn.innerHTML = '<i class="fas fa-copy"></i> Kopírovat'; copyEmailBtn.classList.remove('copied'); }, 2000);
             });
         });
-
-        console.log('🚀 BYNYZ web design loaded!');
     </script>
 </body>
 </html>
