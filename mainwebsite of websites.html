@@ -32,12 +32,34 @@
         
         /* Background */
         .bg-pattern { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
-        .bg-orb { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.4; }
+        .bg-orb { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.4; animation: orbFloat 20s ease-in-out infinite; }
         .bg-orb-1 { width: 500px; height: 500px; background: var(--purple-700); top: -200px; right: -200px; }
-        .bg-orb-2 { width: 400px; height: 400px; background: var(--purple-700); bottom: 20%; left: -150px; }
+        .bg-orb-2 { width: 400px; height: 400px; background: var(--purple-700); bottom: 20%; left: -150px; animation-delay: -10s; }
+        @keyframes orbFloat { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(30px, 20px) scale(1.05); } }
         
         .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
         section { position: relative; z-index: 1; }
+        
+        /* Animations */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInLeft { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes fadeInRight { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes scaleIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+        @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+        
+        .animate-fade-up { animation: fadeInUp 0.8s ease forwards; opacity: 0; }
+        .animate-fade-left { animation: fadeInLeft 0.8s ease forwards; opacity: 0; }
+        .animate-fade-right { animation: fadeInRight 0.8s ease forwards; opacity: 0; }
+        .animate-scale { animation: scaleIn 0.8s ease forwards; opacity: 0; }
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
         
         /* Header */
         header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1rem 0; transition: all 0.3s; }
@@ -45,9 +67,12 @@
         nav { display: flex; justify-content: space-between; align-items: center; }
         .logo { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.5rem; font-weight: 800; text-decoration: none; background: linear-gradient(135deg, var(--purple-300), var(--purple-500)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .nav-links { display: flex; align-items: center; gap: 2rem; }
-        .nav-links a { color: var(--text-secondary); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.3s; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.3s; position: relative; }
+        .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--accent); transition: width 0.3s; }
         .nav-links a:hover { color: var(--text-primary); }
+        .nav-links a:hover::after { width: 100%; }
         .nav-cta { background: linear-gradient(135deg, var(--purple-500), var(--purple-700)); color: var(--text-primary) !important; padding: 0.6rem 1.25rem; border-radius: 100px; font-weight: 600 !important; }
+        .nav-cta::after { display: none !important; }
         .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 5px; }
         .mobile-toggle span { display: block; width: 24px; height: 2px; background: var(--text-primary); margin: 5px 0; transition: all 0.3s; }
         
@@ -55,7 +80,7 @@
         .hero { min-height: 100vh; display: flex; align-items: center; padding: 6rem 0 4rem; }
         .hero-content { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: center; }
         .hero-tagline { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(139,92,246,0.1); border: 1px solid rgba(139,92,246,0.2); padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.875rem; color: var(--purple-300); margin-bottom: 1.5rem; }
-        .hero-tagline i { color: var(--accent); }
+        .hero-tagline i { color: var(--accent); animation: pulse 2s ease infinite; }
         .hero-text h1 { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; }
         .hero-text h1 .highlight { background: linear-gradient(135deg, var(--accent), var(--accent-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .hero-description { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem; max-width: 500px; }
@@ -64,86 +89,121 @@
         .btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent-light)); color: white; box-shadow: 0 4px 20px rgba(249,115,22,0.3); }
         .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(249,115,22,0.4); }
         .btn-secondary { background: rgba(255,255,255,0.05); color: var(--text-primary); border: 1px solid rgba(255,255,255,0.1); }
-        .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+        .btn-secondary:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
         .btn-outline { background: transparent; color: var(--text-primary); border: 1px solid var(--dark-border); }
         .btn-outline:hover { background: rgba(255,255,255,0.05); border-color: var(--purple-500); }
         
         .hero-stats { display: flex; gap: 2rem; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--dark-border); }
+        .stat { transition: transform 0.3s; }
+        .stat:hover { transform: translateY(-3px); }
         .stat-value { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.75rem; font-weight: 700; color: var(--purple-400); display: flex; align-items: center; gap: 0.25rem; }
         .stat-value i { color: var(--gold); font-size: 1rem; }
         .stat-label { font-size: 0.85rem; color: var(--text-muted); }
         
-        /* Browser Mockup */
-        .hero-visual { position: relative; display: flex; justify-content: center; }
-        .browser-mockup { width: 100%; max-width: 480px; background: var(--dark-card); border-radius: 16px; border: 1px solid var(--dark-border); overflow: hidden; box-shadow: 0 40px 80px -20px rgba(0,0,0,0.5); }
-        .browser-header { display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1rem; background: rgba(0,0,0,0.4); border-bottom: 1px solid var(--dark-border); }
-        .browser-dots { display: flex; gap: 6px; }
-        .browser-dot { width: 10px; height: 10px; border-radius: 50%; }
-        .browser-dot:nth-child(1) { background: #ff5f57; }
-        .browser-dot:nth-child(2) { background: #ffbd2e; }
-        .browser-dot:nth-child(3) { background: #28c840; }
-        .browser-url { flex: 1; margin-left: 0.5rem; background: rgba(255,255,255,0.07); padding: 0.4rem 0.75rem; border-radius: 6px; font-size: 0.75rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.4rem; }
-        .browser-url i { color: #28c840; font-size: 0.6rem; }
-        .browser-content { padding: 1rem; background: linear-gradient(180deg, #0f0f14, #151520); }
+        /* Hero Visual - 3D Device Stack */
+        .hero-visual { position: relative; display: flex; justify-content: center; perspective: 1000px; }
         
-        /* Mockup Content */
-        .mockup-navbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
-        .mockup-logo { display: flex; align-items: center; gap: 0.4rem; }
-        .mockup-logo-icon { width: 24px; height: 24px; background: linear-gradient(135deg, var(--accent), var(--accent-light)); border-radius: 5px; display: flex; align-items: center; justify-content: center; }
-        .mockup-logo-icon i { color: white; font-size: 0.6rem; }
-        .mockup-logo-text { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 0.75rem; }
-        .mockup-nav-cta { background: linear-gradient(135deg, var(--accent), var(--accent-light)); padding: 0.3rem 0.6rem; border-radius: 100px; font-size: 0.55rem; color: white; font-weight: 600; }
+        .device-stack { position: relative; width: 100%; max-width: 450px; height: 380px; transform-style: preserve-3d; }
         
-        .mockup-hero { display: flex; gap: 1rem; margin-bottom: 1rem; }
-        .mockup-hero-text { flex: 1; }
-        .mockup-hero-badge { display: inline-flex; align-items: center; gap: 0.25rem; background: rgba(139,92,246,0.15); border: 1px solid rgba(139,92,246,0.25); padding: 0.2rem 0.5rem; border-radius: 100px; font-size: 0.5rem; color: var(--purple-300); margin-bottom: 0.5rem; }
-        .mockup-hero-badge i { color: var(--gold); font-size: 0.4rem; }
-        .mockup-hero-title { font-family: 'Bricolage Grotesque', sans-serif; font-size: 0.9rem; font-weight: 800; line-height: 1.2; margin-bottom: 0.4rem; }
-        .mockup-hero-title .accent { color: var(--accent); }
-        .mockup-hero-desc { font-size: 0.5rem; color: var(--text-secondary); line-height: 1.4; margin-bottom: 0.6rem; }
-        .mockup-hero-buttons { display: flex; gap: 0.4rem; }
-        .mockup-btn { padding: 0.3rem 0.6rem; border-radius: 100px; font-size: 0.5rem; font-weight: 600; }
-        .mockup-btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent-light)); color: white; }
-        .mockup-btn-secondary { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary); }
+        /* Desktop device */
+        .device-desktop { position: absolute; width: 100%; background: var(--dark-card); border-radius: 12px; border: 1px solid var(--dark-border); overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); transform: rotateY(-5deg) rotateX(5deg); animation: float 6s ease-in-out infinite; }
+        .device-desktop-screen { background: linear-gradient(180deg, #13131a 0%, #1a1a24 100%); padding: 1rem; min-height: 240px; }
+        .device-desktop-header { height: 28px; background: rgba(0,0,0,0.4); border-bottom: 1px solid var(--dark-border); display: flex; align-items: center; padding: 0 0.75rem; gap: 6px; }
+        .device-dot { width: 8px; height: 8px; border-radius: 50%; }
+        .device-dot.red { background: #ff5f57; }
+        .device-dot.yellow { background: #ffbd2e; }
+        .device-dot.green { background: #28c840; }
         
-        .mockup-hero-image { width: 80px; height: 70px; background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(249,115,22,0.15)); border-radius: 10px; border: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.3rem; flex-shrink: 0; }
-        .mockup-hero-image i { color: var(--purple-400); font-size: 1.25rem; }
-        .mockup-hero-image span { font-size: 0.4rem; color: var(--text-muted); }
+        /* Screen content - Analytics Dashboard */
+        .dashboard { padding: 0.5rem; }
+        .dashboard-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+        .dashboard-logo { display: flex; align-items: center; gap: 0.4rem; }
+        .dashboard-logo-icon { width: 24px; height: 24px; background: linear-gradient(135deg, var(--accent), var(--accent-light)); border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+        .dashboard-logo-icon i { color: white; font-size: 0.65rem; }
+        .dashboard-logo span { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 0.8rem; }
+        .dashboard-badge { background: rgba(34, 197, 94, 0.15); border: 1px solid rgba(34, 197, 94, 0.3); padding: 0.2rem 0.5rem; border-radius: 100px; font-size: 0.55rem; color: #22c55e; display: flex; align-items: center; gap: 0.25rem; }
+        .dashboard-badge i { font-size: 0.5rem; }
         
-        .mockup-stats { display: flex; gap: 0.5rem; margin-bottom: 0.75rem; }
-        .mockup-stat { display: flex; align-items: center; gap: 0.3rem; padding: 0.3rem 0.5rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 6px; }
-        .mockup-stat-icon { width: 18px; height: 18px; background: linear-gradient(135deg, var(--purple-500), var(--purple-700)); border-radius: 4px; display: flex; align-items: center; justify-content: center; }
-        .mockup-stat-icon i { color: white; font-size: 0.45rem; }
-        .mockup-stat-value { font-family: 'Bricolage Grotesque', sans-serif; font-size: 0.6rem; font-weight: 700; }
-        .mockup-stat-label { font-size: 0.4rem; color: var(--text-muted); }
+        .dashboard-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-bottom: 0.75rem; }
+        .dash-stat { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 0.6rem; text-align: center; transition: all 0.3s; }
+        .dash-stat:hover { border-color: var(--purple-500); transform: translateY(-2px); }
+        .dash-stat-value { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1rem; font-weight: 700; color: var(--text-primary); }
+        .dash-stat-label { font-size: 0.5rem; color: var(--text-muted); margin-top: 0.15rem; }
+        .dash-stat-change { font-size: 0.45rem; color: #22c55e; margin-top: 0.2rem; }
+        .dash-stat-change.negative { color: #ef4444; }
         
-        .mockup-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
-        .mockup-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 0.6rem 0.5rem; text-align: center; }
-        .mockup-card-icon { width: 26px; height: 26px; margin: 0 auto 0.4rem; background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(139,92,246,0.1)); border-radius: 6px; display: flex; align-items: center; justify-content: center; }
-        .mockup-card-icon i { color: var(--purple-400); font-size: 0.6rem; }
-        .mockup-card h4 { font-size: 0.5rem; font-weight: 600; margin-bottom: 0.15rem; }
-        .mockup-card p { font-size: 0.4rem; color: var(--text-muted); }
+        .dashboard-chart { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 0.75rem; height: 80px; position: relative; overflow: hidden; }
+        .chart-title { font-size: 0.55rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+        .chart-bars { display: flex; align-items: flex-end; gap: 4px; height: 50px; }
+        .chart-bar { flex: 1; background: linear-gradient(180deg, var(--purple-500), var(--purple-700)); border-radius: 3px 3px 0 0; animation: chartGrow 1s ease forwards; transform-origin: bottom; }
+        @keyframes chartGrow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+        .chart-bar:nth-child(1) { height: 60%; animation-delay: 0.1s; }
+        .chart-bar:nth-child(2) { height: 80%; animation-delay: 0.15s; }
+        .chart-bar:nth-child(3) { height: 45%; animation-delay: 0.2s; }
+        .chart-bar:nth-child(4) { height: 90%; animation-delay: 0.25s; }
+        .chart-bar:nth-child(5) { height: 70%; animation-delay: 0.3s; }
+        .chart-bar:nth-child(6) { height: 85%; animation-delay: 0.35s; }
+        .chart-bar:nth-child(7) { height: 95%; background: linear-gradient(180deg, var(--accent), var(--accent-light)); animation-delay: 0.4s; }
         
-        /* Floating badges - positioned relative to browser mockup */
-        .floating-badges { position: absolute; inset: 0; pointer-events: none; }
-        .floating-badge { position: absolute; background: var(--dark-card); border: 1px solid var(--dark-border); border-radius: 10px; padding: 0.5rem 0.75rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; box-shadow: 0 15px 30px rgba(0,0,0,0.3); white-space: nowrap; }
-        .floating-badge i { font-size: 0.9rem; }
-        .floating-badge .icon-mobile { color: var(--accent); }
-        .floating-badge .icon-check { color: #28c840; }
-        .badge-responsive { top: 5%; right: -10px; }
-        .badge-seo { bottom: 15%; left: -10px; }
+        /* Tablet device */
+        .device-tablet { position: absolute; width: 140px; right: -20px; bottom: 20px; background: var(--dark-card); border-radius: 12px; border: 1px solid var(--dark-border); overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.4); transform: rotateY(10deg) rotateX(-5deg); animation: float 6s ease-in-out infinite; animation-delay: -2s; z-index: 2; }
+        .device-tablet-screen { background: linear-gradient(180deg, #13131a 0%, #1a1a24 100%); padding: 0.5rem; min-height: 100px; }
+        .tablet-content { text-align: center; }
+        .tablet-icon { width: 32px; height: 32px; background: linear-gradient(135deg, #22c55e, #16a34a); border-radius: 8px; margin: 0 auto 0.4rem; display: flex; align-items: center; justify-content: center; }
+        .tablet-icon i { color: white; font-size: 0.85rem; }
+        .tablet-title { font-size: 0.6rem; font-weight: 600; margin-bottom: 0.2rem; }
+        .tablet-value { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1rem; font-weight: 700; color: #22c55e; }
+        
+        /* Phone device */
+        .device-phone { position: absolute; width: 90px; left: -10px; bottom: 40px; background: var(--dark-card); border-radius: 14px; border: 1px solid var(--dark-border); overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.4); transform: rotateY(-15deg) rotateX(5deg); animation: float 6s ease-in-out infinite; animation-delay: -4s; z-index: 3; }
+        .device-phone-notch { width: 40px; height: 12px; background: var(--dark); border-radius: 0 0 10px 10px; margin: 0 auto; }
+        .device-phone-screen { background: linear-gradient(180deg, #13131a 0%, #1a1a24 100%); padding: 0.4rem; min-height: 120px; }
+        .phone-content { text-align: center; }
+        .phone-avatar { width: 28px; height: 28px; background: linear-gradient(135deg, var(--purple-500), var(--purple-700)); border-radius: 50%; margin: 0.3rem auto; display: flex; align-items: center; justify-content: center; }
+        .phone-avatar i { color: white; font-size: 0.7rem; }
+        .phone-name { font-size: 0.5rem; font-weight: 600; margin-bottom: 0.4rem; }
+        .phone-notif { background: rgba(249, 115, 22, 0.15); border: 1px solid rgba(249, 115, 22, 0.3); border-radius: 6px; padding: 0.3rem; margin-top: 0.3rem; }
+        .phone-notif-title { font-size: 0.4rem; color: var(--accent); font-weight: 600; }
+        .phone-notif-text { font-size: 0.35rem; color: var(--text-muted); }
+        
+        /* Floating elements */
+        .floating-elements { position: absolute; inset: 0; pointer-events: none; }
+        .float-badge { position: absolute; background: var(--dark-card); border: 1px solid var(--dark-border); border-radius: 10px; padding: 0.5rem 0.75rem; display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; box-shadow: 0 15px 30px rgba(0,0,0,0.3); white-space: nowrap; animation: float 4s ease-in-out infinite; }
+        .float-badge i { font-size: 0.9rem; }
+        .float-badge.badge-seo { top: 10%; right: 5%; animation-delay: -1s; }
+        .float-badge.badge-seo i { color: #22c55e; }
+        .float-badge.badge-mobile { bottom: 5%; left: 10%; animation-delay: -2s; }
+        .float-badge.badge-mobile i { color: var(--accent); }
+        .float-badge.badge-speed { top: 50%; right: -5%; animation-delay: -3s; }
+        .float-badge.badge-speed i { color: var(--purple-400); }
+        
+        /* Floating particles */
+        .particles { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+        .particle { position: absolute; width: 4px; height: 4px; background: var(--purple-500); border-radius: 50%; opacity: 0.5; animation: particleFloat 8s linear infinite; }
+        @keyframes particleFloat { 0% { transform: translateY(100%) rotate(0deg); opacity: 0; } 10% { opacity: 0.5; } 90% { opacity: 0.5; } 100% { transform: translateY(-100%) rotate(360deg); opacity: 0; } }
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 30%; animation-delay: -2s; width: 3px; height: 3px; }
+        .particle:nth-child(3) { left: 50%; animation-delay: -4s; }
+        .particle:nth-child(4) { left: 70%; animation-delay: -6s; width: 5px; height: 5px; }
+        .particle:nth-child(5) { left: 90%; animation-delay: -1s; width: 3px; height: 3px; }
         
         /* Trust Section */
         .trust-section { padding: 3rem 0; background: rgba(0,0,0,0.2); border-top: 1px solid var(--dark-border); border-bottom: 1px solid var(--dark-border); }
         .trust-content { text-align: center; }
-        .trust-badge { display: inline-flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(251,191,36,0.2); border-radius: 100px; padding: 0.75rem 1.5rem; margin-bottom: 1.5rem; }
+        .trust-badge { display: inline-flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(251,191,36,0.2); border-radius: 100px; padding: 0.75rem 1.5rem; margin-bottom: 1.5rem; transition: transform 0.3s; }
+        .trust-badge:hover { transform: scale(1.02); }
         .trust-stars { display: flex; gap: 3px; }
-        .trust-stars i { color: var(--gold); font-size: 1.1rem; }
+        .trust-stars i { color: var(--gold); font-size: 1.1rem; animation: bounce 1s ease infinite; }
+        .trust-stars i:nth-child(2) { animation-delay: 0.1s; }
+        .trust-stars i:nth-child(3) { animation-delay: 0.2s; }
+        .trust-stars i:nth-child(4) { animation-delay: 0.3s; }
+        .trust-stars i:nth-child(5) { animation-delay: 0.4s; }
         .trust-text { text-align: left; }
         .trust-rating { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.25rem; font-weight: 700; }
         .trust-count { font-size: 0.85rem; color: var(--text-secondary); }
         .trust-features { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
-        .trust-feature { display: flex; align-items: center; gap: 0.5rem; color: var(--text-secondary); font-size: 0.9rem; }
+        .trust-feature { display: flex; align-items: center; gap: 0.5rem; color: var(--text-secondary); font-size: 0.9rem; transition: all 0.3s; }
+        .trust-feature:hover { color: var(--text-primary); transform: translateY(-2px); }
         .trust-feature i { color: var(--purple-400); }
         
         /* Services */
@@ -153,9 +213,12 @@
         .section-title { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 0.75rem; }
         .section-subtitle { color: var(--text-secondary); font-size: 1rem; }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-        .service-card { background: rgba(255,255,255,0.02); border: 1px solid var(--dark-border); border-radius: 20px; padding: 2rem; transition: all 0.3s; }
-        .service-card:hover { transform: translateY(-5px); border-color: rgba(139,92,246,0.3); }
-        .service-icon { width: 60px; height: 60px; background: linear-gradient(135deg, var(--purple-500), var(--purple-700)); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: white; margin-bottom: 1.25rem; }
+        .service-card { background: rgba(255,255,255,0.02); border: 1px solid var(--dark-border); border-radius: 20px; padding: 2rem; transition: all 0.4s; position: relative; overflow: hidden; }
+        .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--purple-500), var(--accent)); transform: scaleX(0); transition: transform 0.4s; }
+        .service-card:hover { transform: translateY(-8px); border-color: rgba(139,92,246,0.3); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        .service-card:hover::before { transform: scaleX(1); }
+        .service-icon { width: 60px; height: 60px; background: linear-gradient(135deg, var(--purple-500), var(--purple-700)); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: white; margin-bottom: 1.25rem; transition: transform 0.3s; }
+        .service-card:hover .service-icon { transform: scale(1.1) rotate(5deg); }
         .service-card h3 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; }
         .service-card p { color: var(--text-secondary); margin-bottom: 1.25rem; font-size: 0.95rem; }
         .service-features { display: flex; flex-direction: column; gap: 0.5rem; }
@@ -165,10 +228,11 @@
         /* Portfolio */
         .portfolio { padding: 6rem 0; background: rgba(0,0,0,0.3); }
         .portfolio-showcase { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-        .portfolio-card { position: relative; border-radius: 20px; overflow: hidden; background: var(--dark-card); border: 1px solid var(--dark-border); aspect-ratio: 16/10; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
-        .portfolio-card:hover { transform: scale(1.02); border-color: rgba(139,92,246,0.3); }
+        .portfolio-card { position: relative; border-radius: 20px; overflow: hidden; background: var(--dark-card); border: 1px solid var(--dark-border); aspect-ratio: 16/10; display: flex; align-items: center; justify-content: center; transition: all 0.4s; }
+        .portfolio-card:hover { transform: scale(1.03); border-color: rgba(139,92,246,0.3); }
+        .portfolio-card:hover .portfolio-placeholder i { transform: scale(1.2); }
         .portfolio-placeholder { text-align: center; padding: 2rem; }
-        .portfolio-placeholder i { font-size: 3rem; color: var(--purple-700); margin-bottom: 1rem; }
+        .portfolio-placeholder i { font-size: 3rem; color: var(--purple-700); margin-bottom: 1rem; transition: transform 0.4s; }
         .portfolio-placeholder h4 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.1rem; margin-bottom: 0.4rem; }
         .portfolio-placeholder p { color: var(--text-muted); font-size: 0.85rem; }
         .portfolio-coming { position: absolute; top: 0.75rem; right: 0.75rem; background: linear-gradient(135deg, var(--accent), var(--accent-light)); color: white; padding: 0.3rem 0.75rem; border-radius: 100px; font-size: 0.7rem; font-weight: 600; }
@@ -178,8 +242,10 @@
         /* Pricing */
         .pricing { padding: 6rem 0; }
         .pricing-simple { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 800px; margin: 0 auto; }
-        .pricing-block { background: rgba(255,255,255,0.02); border: 1px solid var(--dark-border); border-radius: 20px; padding: 2rem; transition: all 0.3s; }
-        .pricing-block:hover { border-color: rgba(139,92,246,0.3); transform: translateY(-3px); }
+        .pricing-block { background: rgba(255,255,255,0.02); border: 1px solid var(--dark-border); border-radius: 20px; padding: 2rem; transition: all 0.4s; position: relative; overflow: hidden; }
+        .pricing-block::before { content: ''; position: absolute; top: -100%; left: -100%; width: 300%; height: 300%; background: linear-gradient(45deg, transparent, rgba(139,92,246,0.03), transparent); transform: rotate(45deg); transition: all 0.6s; }
+        .pricing-block:hover { border-color: rgba(139,92,246,0.3); transform: translateY(-5px); }
+        .pricing-block:hover::before { top: 100%; left: 100%; }
         .pricing-block-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--dark-border); gap: 1rem; }
         .pricing-block-title h3 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.25rem; font-weight: 700; margin-bottom: 0.3rem; }
         .pricing-block-title p { color: var(--text-muted); font-size: 0.85rem; }
@@ -200,15 +266,17 @@
         .process { padding: 6rem 0; background: rgba(0,0,0,0.3); }
         .process-timeline { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
         .process-step { text-align: center; }
-        .process-number { width: 70px; height: 70px; background: var(--dark-card); border: 2px solid var(--dark-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--purple-400); transition: all 0.3s; }
+        .process-number { width: 70px; height: 70px; background: var(--dark-card); border: 2px solid var(--dark-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.5rem; font-weight: 800; color: var(--purple-400); transition: all 0.4s; position: relative; }
+        .process-number::after { content: ''; position: absolute; inset: -4px; border-radius: 50%; border: 2px dashed var(--purple-500); opacity: 0; transition: all 0.4s; animation: rotate 10s linear infinite paused; }
         .process-step:hover .process-number { border-color: var(--purple-500); background: rgba(139,92,246,0.1); transform: scale(1.1); }
+        .process-step:hover .process-number::after { opacity: 1; animation-play-state: running; }
         .process-step h3 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
         .process-step p { color: var(--text-secondary); font-size: 0.85rem; }
         
         /* CTA */
         .cta { padding: 6rem 0; text-align: center; }
         .cta-box { background: linear-gradient(145deg, rgba(139,92,246,0.15), rgba(139,92,246,0.05)); border: 1px solid rgba(139,92,246,0.25); border-radius: 24px; padding: 4rem 2rem; position: relative; overflow: hidden; }
-        .cta-box::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 200px; height: 200px; background: var(--purple-500); filter: blur(150px); opacity: 0.3; }
+        .cta-box::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 200px; height: 200px; background: var(--purple-500); filter: blur(150px); opacity: 0.3; animation: pulse 4s ease infinite; }
         .cta-box h2 { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 1rem; position: relative; }
         .cta-box p { color: var(--text-secondary); font-size: 1rem; margin-bottom: 2rem; max-width: 450px; margin-left: auto; margin-right: auto; position: relative; }
         .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; }
@@ -221,7 +289,7 @@
         .email-modal { background: var(--dark-card); border: 1px solid var(--dark-border); border-radius: 20px; padding: 2rem; max-width: 400px; width: 100%; position: relative; transform: scale(0.9) translateY(20px); transition: all 0.3s; }
         .email-modal-overlay.active .email-modal { transform: scale(1) translateY(0); }
         .email-modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; color: var(--text-muted); font-size: 1.25rem; cursor: pointer; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s; }
-        .email-modal-close:hover { color: var(--text-primary); background: rgba(255,255,255,0.1); }
+        .email-modal-close:hover { color: var(--text-primary); background: rgba(255,255,255,0.1); transform: rotate(90deg); }
         .email-modal h3 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.3rem; font-weight: 700; margin-bottom: 0.4rem; text-align: center; }
         .email-modal-subtitle { color: var(--text-secondary); text-align: center; margin-bottom: 1.5rem; font-size: 0.9rem; }
         .email-address-box { background: rgba(255,255,255,0.05); border: 1px solid var(--dark-border); border-radius: 10px; padding: 0.75rem 1rem; display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; gap: 0.5rem; flex-wrap: wrap; }
@@ -231,7 +299,7 @@
         .copy-btn.copied { background: linear-gradient(135deg, #22c55e, #16a34a); }
         .email-options { display: flex; flex-direction: column; gap: 0.6rem; }
         .email-option { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; background: rgba(255,255,255,0.03); border: 1px solid var(--dark-border); border-radius: 10px; text-decoration: none; color: var(--text-primary); transition: all 0.3s; }
-        .email-option:hover { background: rgba(255,255,255,0.08); border-color: rgba(139,92,246,0.3); }
+        .email-option:hover { background: rgba(255,255,255,0.08); border-color: rgba(139,92,246,0.3); transform: translateX(5px); }
         .email-option-icon { width: 38px; height: 38px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
         .email-option-icon.gmail { background: linear-gradient(135deg, #EA4335, #FBBC05); color: white; }
         .email-option-icon.seznam { background: linear-gradient(135deg, #CC0000, #FF0000); color: white; }
@@ -250,14 +318,18 @@
         .footer-brand p { color: var(--text-secondary); max-width: 280px; margin-bottom: 1rem; font-size: 0.9rem; }
         .footer-social { display: flex; gap: 0.6rem; }
         .footer-social a { width: 40px; height: 40px; background: rgba(255,255,255,0.05); border: 1px solid var(--dark-border); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--text-secondary); font-size: 1.1rem; transition: all 0.3s; }
-        .footer-social a:hover { background: var(--purple-600); border-color: var(--purple-500); color: white; }
+        .footer-social a:hover { background: var(--purple-600); border-color: var(--purple-500); color: white; transform: translateY(-3px); }
         .footer-col h4 { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; margin-bottom: 1rem; font-size: 1rem; }
         .footer-col ul { list-style: none; }
         .footer-col li { margin-bottom: 0.5rem; }
-        .footer-col a { color: var(--text-secondary); text-decoration: none; transition: color 0.3s; font-size: 0.9rem; }
-        .footer-col a:hover { color: var(--purple-400); }
+        .footer-col a { color: var(--text-secondary); text-decoration: none; transition: all 0.3s; font-size: 0.9rem; }
+        .footer-col a:hover { color: var(--purple-400); padding-left: 5px; }
         .footer-bottom { text-align: center; padding-top: 1.5rem; border-top: 1px solid var(--dark-border); }
         .footer-bottom p { color: var(--text-muted); font-size: 0.85rem; }
+        
+        /* Scroll animations */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
         
         /* Responsive */
         @media (max-width: 1024px) {
@@ -265,9 +337,10 @@
             .hero-description { margin-left: auto; margin-right: auto; }
             .hero-cta, .hero-stats { justify-content: center; }
             .hero-visual { order: -1; }
-            .browser-mockup { max-width: 400px; }
-            .badge-responsive { top: 0; right: 0; }
-            .badge-seo { bottom: 10%; left: 0; }
+            .device-stack { max-width: 380px; height: 320px; }
+            .device-tablet { width: 120px; right: -10px; }
+            .device-phone { width: 80px; left: 0; }
+            .float-badge { display: none; }
             .footer-content { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
             .footer-brand p { margin-left: auto; margin-right: auto; }
             .footer-social { justify-content: center; }
@@ -286,13 +359,9 @@
             .stat { text-align: center; }
             .stat-value { justify-content: center; }
             
-            .browser-mockup { max-width: 320px; }
-            .floating-badges { display: none; }
-            
-            .mockup-hero { flex-direction: column; }
-            .mockup-hero-image { width: 100%; height: 60px; }
-            .mockup-stats { display: none; }
-            .mockup-cards { grid-template-columns: repeat(3, 1fr); }
+            .device-stack { max-width: 300px; height: 280px; }
+            .device-tablet, .device-phone { display: none; }
+            .particles { display: none; }
             
             .trust-badge { flex-direction: column; gap: 0.5rem; padding: 1rem 1.5rem; }
             .trust-text { text-align: center; }
@@ -307,9 +376,7 @@
         
         @media (max-width: 480px) {
             .container { padding: 0 1rem; }
-            .browser-mockup { max-width: 280px; }
-            .mockup-cards { grid-template-columns: 1fr 1fr; }
-            .mockup-card:nth-child(3) { grid-column: span 2; }
+            .device-stack { max-width: 260px; height: 240px; }
             .pricing-block-header { flex-direction: column; gap: 1rem; }
             .pricing-block-price { text-align: left; }
             .pricing-buttons { flex-direction: column; }
@@ -344,16 +411,16 @@
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-text">
-                        <div class="hero-tagline"><i class="fas fa-bolt"></i> Profesionální weby pro české firmy</div>
-                        <h1>
+                        <div class="hero-tagline animate-fade-up"><i class="fas fa-bolt"></i> Profesionální weby pro české firmy</div>
+                        <h1 class="animate-fade-up delay-1">
                             Vaše firma si zaslouží web, který <span class="highlight">přitahuje zákazníky</span>
                         </h1>
-                        <p class="hero-description">Profesionální web do 14 dnů, který pracuje za vás 24/7. Vy se staráte o byznys, já o to, aby vás zákazníci našli online.</p>
-                        <div class="hero-cta">
+                        <p class="hero-description animate-fade-up delay-2">Profesionální web do 14 dnů, který pracuje za vás 24/7. Vy se staráte o byznys, já o to, aby vás zákazníci našli online.</p>
+                        <div class="hero-cta animate-fade-up delay-3">
                             <a href="https://t.me/bynyzdesign" target="_blank" class="btn btn-primary"><i class="fab fa-telegram"></i> Telegram</a>
                             <a href="#" class="btn btn-secondary email-btn"><i class="fas fa-envelope"></i> Email</a>
                         </div>
-                        <div class="hero-stats">
+                        <div class="hero-stats animate-fade-up delay-4">
                             <div class="stat">
                                 <div class="stat-value">12 <i class="fas fa-star"></i></div>
                                 <div class="stat-label">Spokojených klientů</div>
@@ -368,56 +435,98 @@
                             </div>
                         </div>
                     </div>
-                    <div class="hero-visual">
-                        <div class="browser-mockup">
-                            <div class="browser-header">
-                                <div class="browser-dots"><div class="browser-dot"></div><div class="browser-dot"></div><div class="browser-dot"></div></div>
-                                <div class="browser-url"><i class="fas fa-lock"></i> vasefirma.cz</div>
-                            </div>
-                            <div class="browser-content">
-                                <div class="mockup-navbar">
-                                    <div class="mockup-logo">
-                                        <div class="mockup-logo-icon"><i class="fas fa-cube"></i></div>
-                                        <span class="mockup-logo-text">VašeFirma</span>
-                                    </div>
-                                    <div class="mockup-nav-cta">Kontakt</div>
+                    <div class="hero-visual animate-scale delay-2">
+                        <div class="device-stack">
+                            <!-- Desktop -->
+                            <div class="device-desktop">
+                                <div class="device-desktop-header">
+                                    <div class="device-dot red"></div>
+                                    <div class="device-dot yellow"></div>
+                                    <div class="device-dot green"></div>
                                 </div>
-                                <div class="mockup-hero">
-                                    <div class="mockup-hero-text">
-                                        <div class="mockup-hero-badge"><i class="fas fa-star"></i> #1 v oboru</div>
-                                        <h2 class="mockup-hero-title">Kvalitní služby<br>pro <span class="accent">vaše potřeby</span></h2>
-                                        <p class="mockup-hero-desc">Profesionální přístup a spokojenost zákazníků na prvním místě.</p>
-                                        <div class="mockup-hero-buttons">
-                                            <div class="mockup-btn mockup-btn-primary"><i class="fas fa-arrow-right"></i> Zjistit více</div>
-                                            <div class="mockup-btn mockup-btn-secondary">Ceník</div>
+                                <div class="device-desktop-screen">
+                                    <div class="dashboard">
+                                        <div class="dashboard-header">
+                                            <div class="dashboard-logo">
+                                                <div class="dashboard-logo-icon"><i class="fas fa-chart-line"></i></div>
+                                                <span>Analytics</span>
+                                            </div>
+                                            <div class="dashboard-badge"><i class="fas fa-circle"></i> Live</div>
+                                        </div>
+                                        <div class="dashboard-stats">
+                                            <div class="dash-stat">
+                                                <div class="dash-stat-value">2,847</div>
+                                                <div class="dash-stat-label">Návštěvníci</div>
+                                                <div class="dash-stat-change">+24%</div>
+                                            </div>
+                                            <div class="dash-stat">
+                                                <div class="dash-stat-value">€12.4k</div>
+                                                <div class="dash-stat-label">Tržby</div>
+                                                <div class="dash-stat-change">+18%</div>
+                                            </div>
+                                            <div class="dash-stat">
+                                                <div class="dash-stat-value">4.2%</div>
+                                                <div class="dash-stat-label">Konverze</div>
+                                                <div class="dash-stat-change">+8%</div>
+                                            </div>
+                                        </div>
+                                        <div class="dashboard-chart">
+                                            <div class="chart-title">Návštěvnost tento týden</div>
+                                            <div class="chart-bars">
+                                                <div class="chart-bar"></div>
+                                                <div class="chart-bar"></div>
+                                                <div class="chart-bar"></div>
+                                                <div class="chart-bar"></div>
+                                                <div class="chart-bar"></div>
+                                                <div class="chart-bar"></div>
+                                                <div class="chart-bar"></div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="mockup-hero-image"><i class="fas fa-briefcase"></i><span>Váš obsah</span></div>
-                                </div>
-                                <div class="mockup-stats">
-                                    <div class="mockup-stat">
-                                        <div class="mockup-stat-icon"><i class="fas fa-users"></i></div>
-                                        <div><span class="mockup-stat-value">500+</span><span class="mockup-stat-label"> Klientů</span></div>
-                                    </div>
-                                    <div class="mockup-stat">
-                                        <div class="mockup-stat-icon"><i class="fas fa-star"></i></div>
-                                        <div><span class="mockup-stat-value">4.9</span><span class="mockup-stat-label"> Hodnocení</span></div>
-                                    </div>
-                                    <div class="mockup-stat">
-                                        <div class="mockup-stat-icon"><i class="fas fa-clock"></i></div>
-                                        <div><span class="mockup-stat-value">10+</span><span class="mockup-stat-label"> let</span></div>
-                                    </div>
-                                </div>
-                                <div class="mockup-cards">
-                                    <div class="mockup-card"><div class="mockup-card-icon"><i class="fas fa-cog"></i></div><h4>Služba 1</h4><p>Popis</p></div>
-                                    <div class="mockup-card"><div class="mockup-card-icon"><i class="fas fa-chart-line"></i></div><h4>Služba 2</h4><p>Popis</p></div>
-                                    <div class="mockup-card"><div class="mockup-card-icon"><i class="fas fa-shield-alt"></i></div><h4>Služba 3</h4><p>Popis</p></div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="floating-badges">
-                            <div class="floating-badge badge-responsive"><i class="fas fa-mobile-alt icon-mobile"></i><span>Responzivní</span></div>
-                            <div class="floating-badge badge-seo"><i class="fas fa-check icon-check"></i><span>SEO optimalizace</span></div>
+                            
+                            <!-- Tablet -->
+                            <div class="device-tablet">
+                                <div class="device-tablet-screen">
+                                    <div class="tablet-content">
+                                        <div class="tablet-icon"><i class="fas fa-arrow-up"></i></div>
+                                        <div class="tablet-title">Konverze</div>
+                                        <div class="tablet-value">+127%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Phone -->
+                            <div class="device-phone">
+                                <div class="device-phone-notch"></div>
+                                <div class="device-phone-screen">
+                                    <div class="phone-content">
+                                        <div class="phone-avatar"><i class="fas fa-user"></i></div>
+                                        <div class="phone-name">Nový zákazník</div>
+                                        <div class="phone-notif">
+                                            <div class="phone-notif-title">🎉 Nová objednávka!</div>
+                                            <div class="phone-notif-text">Právě teď</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Floating badges -->
+                            <div class="floating-elements">
+                                <div class="float-badge badge-seo"><i class="fas fa-check-circle"></i> SEO optimalizace</div>
+                                <div class="float-badge badge-mobile"><i class="fas fa-mobile-alt"></i> Responzivní</div>
+                                <div class="float-badge badge-speed"><i class="fas fa-bolt"></i> Rychlý web</div>
+                            </div>
+                            
+                            <!-- Particles -->
+                            <div class="particles">
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                                <div class="particle"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -443,13 +552,13 @@
 
         <section id="sluzby" class="services">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header reveal">
                     <div class="section-label">Služby</div>
                     <h2 class="section-title">Co pro vás mohu udělat</h2>
                     <p class="section-subtitle">Kompletní řešení pro váš online úspěch</p>
                 </div>
                 <div class="services-grid">
-                    <div class="service-card">
+                    <div class="service-card reveal">
                         <div class="service-icon"><i class="fas fa-palette"></i></div>
                         <h3>Webový design</h3>
                         <p>Originální design, který zaujme zákazníky a odliší vás od konkurence.</p>
@@ -459,7 +568,7 @@
                             <div class="service-feature"><i class="fas fa-check"></i><span>Rychlé načítání</span></div>
                         </div>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card reveal">
                         <div class="service-icon"><i class="fas fa-store"></i></div>
                         <h3>Weby pro firmy</h3>
                         <p>Profesionální prezentace pro restaurace, obchody a řemeslníky.</p>
@@ -469,7 +578,7 @@
                             <div class="service-feature"><i class="fas fa-check"></i><span>Mapy a navigace</span></div>
                         </div>
                     </div>
-                    <div class="service-card">
+                    <div class="service-card reveal">
                         <div class="service-icon"><i class="fas fa-rocket"></i></div>
                         <h3>SEO optimalizace</h3>
                         <p>Váš web bude vidět na Googlu. Přivedu k vám zákazníky.</p>
@@ -485,42 +594,42 @@
 
         <section id="portfolio" class="portfolio">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header reveal">
                     <div class="section-label">Portfolio</div>
                     <h2 class="section-title">Pro koho tvořím weby</h2>
                     <p class="section-subtitle">Profesionální stránky pro firmy napříč obory</p>
                 </div>
                 <div class="portfolio-showcase">
-                    <div class="portfolio-card">
+                    <div class="portfolio-card reveal">
                         <div class="portfolio-coming">Brzy</div>
                         <div class="portfolio-placeholder"><i class="fas fa-utensils"></i><h4>Gastronomie</h4><p>Restaurace, kavárny, hotely</p></div>
                     </div>
-                    <div class="portfolio-card">
+                    <div class="portfolio-card reveal">
                         <div class="portfolio-coming">Brzy</div>
                         <div class="portfolio-placeholder"><i class="fas fa-cut"></i><h4>Služby & Wellness</h4><p>Salony, fitness, zdravotní péče</p></div>
                     </div>
-                    <div class="portfolio-card">
+                    <div class="portfolio-card reveal">
                         <div class="portfolio-coming">Brzy</div>
                         <div class="portfolio-placeholder"><i class="fas fa-tools"></i><h4>Stavebnictví</h4><p>Stavební firmy, řemeslníci</p></div>
                     </div>
-                    <div class="portfolio-card">
+                    <div class="portfolio-card reveal">
                         <div class="portfolio-coming">Brzy</div>
                         <div class="portfolio-placeholder"><i class="fas fa-shopping-bag"></i><h4>Retail</h4><p>Obchody, e-commerce</p></div>
                     </div>
                 </div>
-                <p class="portfolio-note"><i class="fas fa-info-circle"></i> Nepracuji s šablonami — každý web je originál na míru.</p>
+                <p class="portfolio-note reveal"><i class="fas fa-info-circle"></i> Nepracuji s šablonami — každý web je originál na míru.</p>
             </div>
         </section>
 
         <section id="cenik" class="pricing">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header reveal">
                     <div class="section-label">Ceník</div>
                     <h2 class="section-title">Jednoduchý ceník</h2>
                     <p class="section-subtitle">Vyberte si podle rozsahu projektu</p>
                 </div>
                 <div class="pricing-simple">
-                    <div class="pricing-block">
+                    <div class="pricing-block reveal">
                         <div class="pricing-block-header">
                             <div class="pricing-block-title"><h3>Menší projekt</h3><p>Jednostránkový web</p></div>
                             <div class="pricing-block-price"><div class="pricing-from">od</div><div class="pricing-amount">3 990</div><div class="pricing-currency">Kč</div></div>
@@ -536,7 +645,7 @@
                             <a href="#" class="btn btn-outline email-btn"><i class="fas fa-envelope"></i> Email</a>
                         </div>
                     </div>
-                    <div class="pricing-block">
+                    <div class="pricing-block reveal">
                         <div class="pricing-block-header">
                             <div class="pricing-block-title"><h3>Větší projekt</h3><p>Vícestránkový web</p></div>
                             <div class="pricing-block-price"><div class="pricing-from">od</div><div class="pricing-amount">7 990</div><div class="pricing-currency">Kč</div></div>
@@ -553,29 +662,29 @@
                         </div>
                     </div>
                 </div>
-                <div class="pricing-note"><p><strong>Potřebujete něco speciálního?</strong> Napište mi a domluvíme se na ceně.</p></div>
+                <div class="pricing-note reveal"><p><strong>Potřebujete něco speciálního?</strong> Napište mi a domluvíme se na ceně.</p></div>
             </div>
         </section>
 
         <section id="proces" class="process">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header reveal">
                     <div class="section-label">Proces</div>
                     <h2 class="section-title">Jak to funguje</h2>
                     <p class="section-subtitle">Od první zprávy po hotový web</p>
                 </div>
                 <div class="process-timeline">
-                    <div class="process-step"><div class="process-number">1</div><h3>Kontakt</h3><p>Napište mi na Telegram nebo email.</p></div>
-                    <div class="process-step"><div class="process-number">2</div><h3>Domluva</h3><p>Probereme požadavky a cenu.</p></div>
-                    <div class="process-step"><div class="process-number">3</div><h3>Tvorba</h3><p>Vytvořím web podle vašich představ.</p></div>
-                    <div class="process-step"><div class="process-number">4</div><h3>Spuštění</h3><p>Po schválení web spustíme!</p></div>
+                    <div class="process-step reveal"><div class="process-number">1</div><h3>Kontakt</h3><p>Napište mi na Telegram nebo email.</p></div>
+                    <div class="process-step reveal"><div class="process-number">2</div><h3>Domluva</h3><p>Probereme požadavky a cenu.</p></div>
+                    <div class="process-step reveal"><div class="process-number">3</div><h3>Tvorba</h3><p>Vytvořím web podle vašich představ.</p></div>
+                    <div class="process-step reveal"><div class="process-number">4</div><h3>Spuštění</h3><p>Po schválení web spustíme!</p></div>
                 </div>
             </div>
         </section>
 
         <section id="kontakt" class="cta">
             <div class="container">
-                <div class="cta-box">
+                <div class="cta-box reveal">
                     <h2>Připraveni začít?</h2>
                     <p>Napište mi a do 6 hodin vám odpovím.</p>
                     <div class="cta-buttons">
@@ -683,6 +792,20 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth' });
             });
         });
+        
+        // Scroll reveal
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll, { passive: true });
+        revealOnScroll();
         
         // Email modal
         const emailModal = document.getElementById('emailModal');
