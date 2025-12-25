@@ -14,12 +14,12 @@
     <meta name="language" content="Czech">
     <link rel="canonical" href="https://bynyz.com/">
     
-    <!-- Favicon - TOTO JE TO CO TI CHYBĚLO! -->
-    <link rel="icon" type="image/jpeg" href="kosik.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="kosik-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="kosik-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="kosik-180x180.png">
-    <link rel="shortcut icon" href="kosik.png">
+    <!-- Favicon pro Google Search Results - kosikbackground.jpg -->
+    <link rel="icon" type="image/jpeg" sizes="192x192" href="kosikbackground.jpg">
+    <link rel="icon" type="image/jpeg" sizes="48x48" href="kosikbackground.jpg">
+    <link rel="icon" type="image/png" href="kosik.png">
+    <link rel="shortcut icon" href="kosikbackground.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="kosikbackground.jpg">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -43,8 +43,8 @@
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "name": "BYNYZ",
-        "image": "https://bynyz.com/kosik.png",
-        "logo": "https://bynyz.com/kosik.png",
+        "image": "https://bynyz.com/kosikbackground.jpg",
+        "logo": "https://bynyz.com/kosikbackground.jpg",
         "@id": "https://bynyz.com",
         "url": "https://bynyz.com",
         "description": "Profesionální tvorba webových stránek pro české firmy. Responzivní design, SEO optimalizace, rychlé dodání.",
@@ -76,8 +76,8 @@
         "@type": "Organization",
         "name": "BYNYZ",
         "url": "https://bynyz.com",
-        "logo": "https://bynyz.com/kosik.png",
-        "image": "https://bynyz.com/kosik.png",
+        "logo": "https://bynyz.com/kosikbackground.jpg",
+        "image": "https://bynyz.com/kosikbackground.jpg",
         "contactPoint": {
             "@type": "ContactPoint",
             "email": "support@bynyz.com",
@@ -791,7 +791,7 @@
             <h3>Kontaktujte mě emailem</h3>
             <p class="email-modal-subtitle">Vyberte si, jak chcete email otevřít</p>
             <div class="email-address-box">
-                <span>support@bynyz.com</span>
+                <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="25565055554a575165475c4b5c5f0b464a48">[email&#160;protected]</a></span>
                 <button class="copy-btn" id="copyEmail"><i class="fas fa-copy"></i> Kopírovat</button>
             </div>
             <div class="email-options">
@@ -810,7 +810,7 @@
                     <div class="email-option-text"><strong>Outlook</strong><span>Otevřít v Outlook</span></div>
                     <i class="fas fa-arrow-right"></i>
                 </a>
-                <a href="mailto:support@bynyz.com?subject=Poptávka webu" class="email-option">
+                <a href="/cdn-cgi/l/email-protection#0a797f7a7a65787e4a68736473702469656735797f68606f697e375a657a7ec9ab7c616b2a7d6f687f" class="email-option">
                     <div class="email-option-icon default"><i class="fas fa-envelope"></i></div>
                     <div class="email-option-text"><strong>Výchozí aplikace</strong><span>Emailový klient</span></div>
                     <i class="fas fa-arrow-right"></i>
@@ -846,7 +846,7 @@
                     <h4>Kontakt</h4>
                     <ul>
                         <li><a href="https://t.me/bynyzdesign" target="_blank">@bynyzdesign</a></li>
-                        <li><a href="#" class="email-btn">support@bynyz.com</a></li>
+                        <li><a href="#" class="email-btn"><span class="__cf_email__" data-cfemail="374442474758454377554e594e4d1954585a">[email&#160;protected]</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -854,7 +854,7 @@
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Header scroll
         const header = document.querySelector('header');
         window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 50), { passive: true });
@@ -935,9 +935,9 @@
             navigator.clipboard.writeText('support@bynyz.com').then(() => {
                 copyEmailBtn.innerHTML = '<i class="fas fa-check"></i> Zkopírováno!';
                 copyEmailBtn.classList.add('copied');
-                setTimeout(() => { 
-                    copyEmailBtn.innerHTML = '<i class="fas fa-copy"></i> Kopírovat'; 
-                    copyEmailBtn.classList.remove('copied'); 
+                setTimeout(() => {
+                    copyEmailBtn.innerHTML = '<i class="fas fa-copy"></i> Kopírovat';
+                    copyEmailBtn.classList.remove('copied');
                 }, 2000);
             });
         });
